@@ -15,5 +15,14 @@ image:
   focal_point: ''
   preview_only: no
 projects: []
+diagram: true
 ---
 Just some stuff
+
+{{< diagram >}}
+graph LR;
+    A[Hard edge] -->|Link text| B(Round edge)
+    B --> C{Decision}
+    C -->|One| D[Result one]
+    C -->|Two| E[Result two]
+{{< /diagram >}}
