@@ -19,7 +19,7 @@ diagram: true
 ---
 Just some stuff
 
-```mermaid
+```mermaid 
 graph TD;
     A[Hard edge] -->|Link text| B(Round edge)
     B --> C{Decision}
