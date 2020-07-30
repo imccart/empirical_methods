@@ -16,3 +16,16 @@ image:
   preview_only: no
 projects: []
 ---
+
+
+I've already oversold this section. There is no "test" for whether you need IV.
+
+![](https://media.giphy.com/media/oXB0K4oFw3fck/giphy.gif)
+
+But there are some things that we can try!
+
+![](https://media.giphy.com/media/ZExucn4EDMUtX0p9dt/giphy.gif)
+
+One good first step is to quantify just how bad the endogeneity problem would need to be in order to negate your initial findings (say, from good ol' OLS). @oster[2017]
+
+# References
