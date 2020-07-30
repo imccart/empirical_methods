@@ -1,6 +1,6 @@
 ---
-title: flowchart
-date: ''
+title: Instrumental Variables Flowchart
+date: 'July 2020'
 lastmod: ''
 diagram: true
 ---
