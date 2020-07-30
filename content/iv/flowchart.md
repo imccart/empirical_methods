@@ -1,7 +1,6 @@
 ---
 title: Instrumental Variables Flowchart
-date: 'July 28, 2020'
-lastmod: 'July 28, 2020'
+date: '2020-07-30'
 diagram: true
 ---
 
