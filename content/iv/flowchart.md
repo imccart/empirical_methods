@@ -8,5 +8,6 @@ diagram: true
 {{< diagram >}}
 graph TD;
     A --> B;
-    C --> D
+    C --> D;
+    click B "www.ianmccarthyecon.com" "Link"
 {{< /diagram >}}
