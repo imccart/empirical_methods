@@ -7,7 +7,7 @@ diagram: true
 
 {{< diagram >}}
 graph TD;
-    A --> B;
+    A("Thinking of IV") --> B("How big is the problem?");
     C --> D;
     click B "https://www.github.com" "Test link to GitHub"
 {{< /diagram >}}
