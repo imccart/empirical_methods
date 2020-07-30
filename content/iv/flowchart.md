@@ -5,5 +5,6 @@ diagram: true
 
 {{< diagram >}}
 graph TD;
-    A --> B
+    A --> B;
+    C --> D
 {{< /diagram >}}
