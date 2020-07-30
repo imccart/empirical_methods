@@ -1,5 +1,6 @@
 ---
 title: flowchart
+date: ""
 diagram: true
 ---
 
