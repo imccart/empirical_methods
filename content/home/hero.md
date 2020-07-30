@@ -47,7 +47,7 @@ title = "methods. (kind of) organized."
   label = 'last updated July 2020'
 +++
 
-**Resources to help navigate the many issues ecountered when implementing common methods and identification strategies in applied empirical microeconomics**
+**Helping researchers navigate common methods and identification strategies in applied empirical microeconomics**
 
 ---
 
