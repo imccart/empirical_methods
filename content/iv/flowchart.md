@@ -1,5 +1,6 @@
 ---
 title: Instrumental Variables Flowchart
+author: 'Last updated:'
 date: '2020-07-30'
 diagram: true
 ---

@@ -5,7 +5,7 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 10  # Order that this section will appear.
 
-title = "methods. organized. (kind of)"
+title = "methods. (kind of) organized."
 
 # Hero image (optional). Enter filename of an image in the `static/img/` folder.
 # hero_media = "hero-academic.png"
@@ -47,8 +47,8 @@ title = "methods. organized. (kind of)"
   label = 'last updated July 2020'
 +++
 
-**Resources on canonical methods and identification strategies in applied empirical microeconomics, focusing on workflow and documentation**
+**Resources to help navigate the many issues ecountered when implementing common methods and identification strategies in applied empirical microeconomics**
 
 ---
 
-<span style="text-shadow: none;"><a class="github-button" href="https://github.com/imccart/empirical_methods" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star this on GitHub">Star</a><script async defer src="https://buttons.github.io/buttons.js"></script></span>
+#<span style="text-shadow: none;"><a class="github-button" href="https://github.com/imccart/empirical_methods" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star this on GitHub">Star</a><script async defer src="https://buttons.github.io/buttons.js"></script></span>
