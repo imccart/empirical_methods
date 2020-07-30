@@ -1,6 +1,7 @@
 ---
 title: flowchart
-date: ""
+date: ''
+lastmod: ''
 diagram: true
 ---
 
