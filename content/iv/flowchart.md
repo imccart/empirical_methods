@@ -9,5 +9,5 @@ diagram: true
 graph TD;
     A --> B;
     C --> D;
-    click B "www.ianmccarthyecon.com" "Link"
+    click B "https://www.ianmccarthyecon.netlify.app" "Link"
 {{< /diagram >}}
