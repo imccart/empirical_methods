@@ -4,6 +4,6 @@ diagram: true
 ---
 
 {{< diagram >}}
-graph LR;
+graph TD;
     A --> B
 {{< /diagram >}}
