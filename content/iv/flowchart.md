@@ -16,9 +16,9 @@ The point is that empirical work in practice is messy. Ideally, we could set out
 {{< diagram >}}
 graph TD;
     linkStyle default interpolate basis
-    A(["Thinking of IV?"]) --> B(["How big is the problem?"])
-    B --> |"it's big"| C1(["Are your instruments any good?"])
-    B --> |"no biggie"| C2(["Nevermind: I'll try something else"])
+    A(["Thinking of IV?"]) --> B(["How big is<br> the problem?"])
+    B --> |"it's big"| C1(["Are your instruments<br> any good?"])
+    B --> |"no biggie"| C2(["Nevermind:<br> I'll try something else"])
     subgraph one ["Stage 1: Requirements for any IV"]
     C1 --> D1(["first-stage"])
     C1 --> D2(["exogeneity"])
@@ -28,7 +28,7 @@ graph TD;
     D3 --> E
     end
     subgraph two ["Stage 2: Still not in the clear"]
-    E --> |"lookin' good!"| E1(["How sensitive are the results?"])
+    E --> |"lookin' good!"| E1(["How sensitive are<br> the results?"])
     E1 --> F1(["IV is biased!"])
     E1 --> F2(["what about outliers?"])
     F1 --> G(["assess sensitivity"])
@@ -36,7 +36,7 @@ graph TD;
     end
     E --> |"ouch, no bueno"| C2
     G --> |"um, define sensitive"| C2
-    G --> |"not too bad!"| H(["Go forth and write that appendix!"])
+    G --> |"not too bad!"| H(["Go forth and write<br> that appendix!"])
     click B "/iv/problem" "Pre-testing"
     click C2 "/" "Try something else"
     click H "https://davidcard.berkeley.edu/papers/card-dellavigna-pagelimits.pdf" "Page limits are non-binding."
