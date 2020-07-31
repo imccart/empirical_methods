@@ -2,7 +2,7 @@
 title: "Pre-testing the Need for IV"
 date: '2020-07-30'
 output: 
-  bookdown::html_document2:
+  blogdown::html_document2:
     toc: TRUE
     toc_float: TRUE
     toc_depth: 3
