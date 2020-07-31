@@ -48,5 +48,5 @@ graph TD;
     click B "/iv/problem" "Pre-testing"
     click C2 "/" "Try something else"
     click H "https://davidcard.berkeley.edu/papers/card-dellavigna-pagelimits.pdf" "Page limits are non-binding."
-')
+', width=700)
 ```
