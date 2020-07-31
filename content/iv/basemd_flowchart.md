@@ -3,7 +3,7 @@ title: Instrumental Variables Flowchart
 author: 'Last updated:'
 date: '2020-07-30'
 diagram: true
-diagram_parallax: no
+diagram_parallax: yes
 image_size: contain
 ---
 
@@ -12,7 +12,9 @@ Most of the nodes in the diagram below are clickable, which will take you to ano
 
 ![](https://media.giphy.com/media/l0IylOPCNkiqOgMyA/giphy.gif)
 
-The point is that empirical work in practice is messy. Ideally, we could set out our plan in advance and proceed accordingly, but there are some things we just can't know until we see the data. All we can do is work through the process in good faith, assessing the quality of our empirical work based on sound statistics and econometrics. Happy instrumenting!
+The point is that empirical work in practice is messy. Ideally, we could set out our plan in advance and proceed accordingly, but there are some things we just can't know until we see the data. All we can do is work through the process in good faith, assessing the quality of our empirical work based on sound statistics and econometrics. 
+
+One final note. If you're accessing this on an android mobile device, the flowcharts are going to look a little odd (probably very small). This is a known issue in rendering these types of diagrams. See this closed [issue on GitHub](https://github.com/mermaid-js/mermaid/issues/816) and these unanswered [posts on StackOverflow](https://stackoverflow.com/search?q=%5Bmermaid%5D+chrome). If anyone has any suggestions for how to have this render on an android mobile browser, please let me know. Otherwise, happy instrumenting!
 
 
 {{< diagram >}}
@@ -20,7 +22,7 @@ graph TD;
     linkStyle default interpolate basis
     A(["Thinking of IV?"]) --> B(["How big is<br> the problem?"])
     B --> |"it's big"| C1(["Are your instruments<br> any good?"])
-    B --> |"no biggie"| C2(["Nevermind:<br> I'll try something else"])
+    B --> |"no biggie"| C2(["Nevermind:<br> try something else"])
     subgraph one ["Stage 1: Requirements for any IV"]
     C1 --> D1(["first-stage"])
     C1 --> D2(["exogeneity"])
@@ -30,7 +32,7 @@ graph TD;
     D3 --> E
     end
     subgraph two ["Stage 2: Still not in the clear"]
-    E --> |"lookin' good!"| E1(["How sensitive are<br> the results?"])
+    E --> |"so far so good!"| E1(["How sensitive are<br> the results?"])
     E1 --> F1(["IV is biased!"])
     E1 --> F2(["what about outliers?"])
     F1 --> G(["assess sensitivity"])
@@ -43,3 +45,4 @@ graph TD;
     click C2 "/" "Try something else"
     click H "https://davidcard.berkeley.edu/papers/card-dellavigna-pagelimits.pdf" "Page limits are non-binding."
 {{< /diagram >}}
+
