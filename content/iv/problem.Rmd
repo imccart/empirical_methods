@@ -1,31 +1,36 @@
 ---
 title: "Pre-testing the Need for IV"
-author: ''
-date: '2020-07-30'
-slug: problem
-categories: []
-tags: []
-subtitle: ''
-summary: ''
-authors: []
-lastmod: '2020-07-30T12:34:23-04:00'
-featured: no
-image:
-  caption: ''
-  focal_point: ''
-  preview_only: no
-projects: []
+date: '`r format(Sys.Date(), "%B %d, %Y")`'
+output: 
+  bookdown::html_document2:
+    toc: TRUE
+    toc_float: TRUE
+    toc_depth: 3
+bibliography: 'D:/CloudStation/Professional/Bibliography/BibTeX_Library.bib'    
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
 
-I've already oversold this section. There is no "test" for whether you need IV.
+
+I've already oversold this section. There is no magic "test" for whether you need IV.
 
 ![](https://media.giphy.com/media/oXB0K4oFw3fck/giphy.gif)
 
-But there are some things that we can try!
+But all is not lost. There are a couple of things that we can try. While these approaches won't definitively point us to IV, they will at least inform us as to the extent of the potential endogeneity problem and tell us how different some IV results might be relative to OLS (assuming we have some decent instruments already).
 
 ![](https://media.giphy.com/media/ZExucn4EDMUtX0p9dt/giphy.gif)
 
-One good first step is to quantify just how bad the endogeneity problem would need to be in order to negate your initial findings (say, from good ol' OLS). @oster[2017]
+
+## Coefficient Stability 
+
+A good first step is to quantify just how bad the endogeneity problem would need to be in order to negate your initial findings (say, from good ol' OLS). @oster2017 can help us here. Here's the idea...
+
+Lots of applied researchers assess "coefficient stability" by including different sets of control variables that are intended to proxy for some potentially important unobserved factor. This is not informative of omitted variables bias if the existing controls already do a very poor job of explaining the outcome. As Prof. Oster notes, "Omitted variable bias is proportional to coefficient movements, but only if such movements are scaled by the change in R-squared when controls are included."
+
+Extending the work of @altonji2015, @oster2017 lays out a scenario in which we can fully decompose our outcome of interest into a treatment effect (denoted $\beta$), observed controls (denoted by $W_{1}$), unobserved controls (denoted by $W_{2}$), and some iid error term. We then need to consider values (or a range of values) for two key objects. 
+
+1. What is the maximum $R^2$ value we could obtain if we observed $W_{2}$? Let's call this $R_{\text{max}}^{2}$. If we think the outcome is fully deterministic if we were to observe all relevant variables, then $R_{\text{max}}^{2}=1$, but we could consider smaller values as well. 
 
 # References
