@@ -5,3 +5,9 @@
 .mermaid {
   max-width: 70% !important;
 }
+
+img[src$='#center']
+{
+    display: block;
+    margin: 0.7rem auto;
+}

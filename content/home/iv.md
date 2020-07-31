@@ -39,7 +39,7 @@ So you think you have an endogeneity problem and want to solve it with IV? Well,
 
 I'm assuming you have some instrument(s) in mind already, at least as many as you have endogenous variables. 
 
-![](https://media.giphy.com/media/fXtGlVSI2ZB2E1JO0b/giphy.gif)
+<img src="https://media.giphy.com/media/fXtGlVSI2ZB2E1JO0b/giphy.gif#center" alt="neato">
 
 With those potential instruments in mind, here's the [IV interactive flowchart]({{<ref "/iv/flowchart" >}}).
 
