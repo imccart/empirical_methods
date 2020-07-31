@@ -1,15 +1,39 @@
 ---
 title: "Pre-testing the Need for IV"
-date: '2020-07-30'
+date: 'July 31, 2020'
+output: 
+  bookdown::html_document2:
+    toc: TRUE
+    toc_float: TRUE
+    toc_depth: 3
+bibliography: 'D:/CloudStation/Professional/Bibliography/BibTeX_Library.bib'    
 ---
 
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
-<p>I’ve already oversold this section. There is no “test” for whether you need IV.</p>
+<p>I’ve already oversold this section. There is no magic “test” for whether you need IV.</p>
 <p><img src="https://media.giphy.com/media/oXB0K4oFw3fck/giphy.gif" /></p>
-<p>But there are some things that we can try!</p>
+<p>But all is not lost. There are a couple of things that we can try. While these approaches won’t definitively point us to IV, they will at least inform us as to the extent of the potential endogeneity problem and tell us how different some IV results might be relative to OLS (assuming we have some decent instruments already).</p>
 <p><img src="https://media.giphy.com/media/ZExucn4EDMUtX0p9dt/giphy.gif" /></p>
-<p>One good first step is to quantify just how bad the endogeneity problem would need to be in order to negate your initial findings (say, from good ol’ OLS). <span class="citation">@oster [2017]</span></p>
+<div id="coefficient-stability" class="section level2">
+<h2>Coefficient Stability</h2>
+<p>A good first step is to quantify just how bad the endogeneity problem would need to be in order to negate your initial findings (say, from good ol’ OLS). <span class="citation">(<span class="citeproc-not-found" data-reference-id="oster2017"><strong>???</strong></span>)</span> can help us here. Here’s the idea…</p>
+<p>Lots of applied researchers assess “coefficient stability” by including different sets of control variables that are intended to proxy for some potentially important unobserved factor. This is not informative of omitted variables bias if the existing controls already do a very poor job of explaining the outcome. As Prof. Oster notes, “Omitted variable bias is proportional to coefficient movements, but only if such movements are scaled by the change in R-squared when controls are included.”</p>
+<p>Extending the work of <span class="citation">(<span class="citeproc-not-found" data-reference-id="altonji2015"><strong>???</strong></span>)</span>, <span class="citation">(<span class="citeproc-not-found" data-reference-id="oster2017"><strong>???</strong></span>)</span> lays out a scenario in which we can fully decompose our outcome of interest into a treatment effect (denoted <span class="math inline">\(\beta\)</span>), observed controls (denoted by <span class="math inline">\(W_{1}\)</span>), unobserved controls (denoted by <span class="math inline">\(W_{2}\)</span>), and some iid error term. Denote by <span class="math inline">\(X\)</span> the treatment variable, such that <span class="math display">\[Y = \beta X + W_{1} + W_{2} + \epsilon.\]</span> We then need to consider values (or a range of values) for two key objects.</p>
+<ol style="list-style-type: decimal">
+<li><p>What is the maximum <span class="math inline">\(R^2\)</span> value we could obtain if we observed <span class="math inline">\(W_{2}\)</span>? Let’s call this <span class="math inline">\(R_{\text{max}}^{2}\)</span>. If we think the outcome is fully deterministic if we were to observe all relevant variables, then <span class="math inline">\(R_{\text{max}}^{2}=1\)</span>, but we could consider smaller values as well.</p></li>
+<li><p>What is the degree of selection on observed variables relative to unobserved variables? We can denote this value as <span class="math inline">\(\delta\)</span>, and define <span class="math inline">\(\delta\)</span> as the value such that: <span class="math display">\[\delta \times \frac{Cov(W_{1},X)}{Var(W_{1})} = \frac{Cov(W_{2},X)}{Var(W_{2})}.\]</span></p></li>
+</ol>
+<p>We then need to define a few objects that we can directly estimate with the data:</p>
+<ol style="list-style-type: decimal">
+<li><p>Denote by <span class="math inline">\(R^{2}_{X}\)</span> the <span class="math inline">\(R^{2}\)</span> from a regression of <span class="math inline">\(Y\)</span> on treatment (and only treatment, no covariates). Similarly denote by <span class="math inline">\(\hat{\beta}_{X}\)</span> the value of <span class="math inline">\(\beta\)</span> estimated from that regression.</p></li>
+<li><p>Denote by <span class="math inline">\(R^{2}_{X,W_{1}}\)</span> the <span class="math inline">\(R^{2}\)</span> from a regression of <span class="math inline">\(Y\)</span> on treatment and observed controls. Again, denote the estimated value of <span class="math inline">\(\beta\)</span> from this regression as <span class="math inline">\(\hat{\beta}_{X, W_{1}}\)</span>.</p></li>
+</ol>
+<p>Under the assumption that the relative size of coefficients from a regression of <span class="math inline">\(Y\)</span> on <span class="math inline">\(X\)</span> and observed variables are equal to those from a regression of <span class="math inline">\(X\)</span> and the observed variables, <span class="citation">(<span class="citeproc-not-found" data-reference-id="oster2017"><strong>???</strong></span>)</span> then shows that the true coefficient of interest (<span class="math inline">\(\beta\)</span> from the full regression) converges to the following:</p>
+<p><span class="math display">\[\beta^{*} \approx \hat{\beta}_{X,W_{1}} - \delta \times \left[\hat{\beta}_{X} - \hat{\beta}_{X,W_{1}}\right] \times \frac{R_{max}^{2} - R_{X,W_{1}}^{2}}{R_{X,W_{1}}^{2} - R_{X}^{2}}.\]</span></p>
+<p>If we relax the assumption of equal “relative contributions” between the observed covariates and <span class="math inline">\(Y\)</span> versus the observed covariates and <span class="math inline">\(X\)</span>, then the results are a little more complicated. In that case, <span class="citation">(<span class="citeproc-not-found" data-reference-id="oster2017"><strong>???</strong></span>)</span> shows that <span class="math display">\[\beta^{*} = \hat{\beta}_{X,W_{1}} - \nu_{1},\]</span> or <span class="math display">\[\beta^{*} \in \left\{ \hat{\beta}_{X,W_{1}} - \nu_{1}, \hat{\beta}_{X,W_{1}} - \nu_{2}, \hat{\beta}_{X,W_{1}} - \nu_{3} \right\}.\]</span></p>
+</div>
 <div id="references" class="section level1">
 <h1>References</h1>
 </div>
