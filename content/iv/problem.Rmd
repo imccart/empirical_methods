@@ -25,11 +25,11 @@ But all is not lost. There are a couple of things that we can try. While these a
 
 ## Coefficient Stability 
 
-A good first step is to quantify just how bad the endogeneity problem would need to be in order to negate your initial findings (say, from good ol' OLS). @oster2017 can help us here. Here's the idea...
+A good first step is to quantify just how bad the endogeneity problem would need to be in order to negate your initial findings (say, from good ol' OLS). @oster2019 can help us here. Here's the idea...
 
 Lots of applied researchers assess "coefficient stability" by including different sets of control variables that are intended to proxy for some potentially important unobserved factor. This is not informative of omitted variables bias if the existing controls already do a very poor job of explaining the outcome. As Prof. Oster notes, "Omitted variable bias is proportional to coefficient movements, but only if such movements are scaled by the change in R-squared when controls are included."
 
-Extending the work of @altonji2015, @oster2017 lays out a scenario in which we can fully decompose our outcome of interest into a treatment effect (denoted $\beta$), observed controls (denoted by $W_{1}$), unobserved controls (denoted by $W_{2}$), and some iid error term. Denote by $X$ the treatment variable, such that $$Y = \beta X + W_{1} + W_{2} + \epsilon.$$ We then need to consider values (or a range of values) for two key objects. 
+Extending the work of @altonji2005, @oster2019 lays out a scenario in which we can fully decompose our outcome of interest into a treatment effect (denoted $\beta$), observed controls (denoted by $W_{1}$), unobserved controls (denoted by $W_{2}$), and some iid error term. Denote by $X$ the treatment variable, such that $$Y = \beta X + W_{1} + W_{2} + \epsilon.$$ We then need to consider values (or a range of values) for two key objects. 
 
 1. What is the maximum $R^2$ value we could obtain if we observed $W_{2}$? Let's call this $R_{\text{max}}^{2}$. If we think the outcome is fully deterministic if we were to observe all relevant variables, then $R_{\text{max}}^{2}=1$, but we could consider smaller values as well.
 
@@ -41,10 +41,10 @@ We then need to define a few objects that we can directly estimate with the data
 
 2. Denote by $R^{2}_{X,W_{1}}$ the $R^{2}$ from a regression of $Y$ on treatment and observed controls. Again, denote the estimated value of $\beta$ from this regression as $\hat{\beta}_{X, W_{1}}$. 
 
-Under the assumption that the relative size of coefficients from a regression of $Y$ on $X$ and observed variables are equal to those from a regression of $X$ and the observed variables, @oster2017 then shows that the true coefficient of interest ($\beta$ from the full regression) converges to the following:
+Under the assumption that the relative size of coefficients from a regression of $Y$ on $X$ and observed variables are equal to those from a regression of $X$ and the observed variables, @oster2019 then shows that the true coefficient of interest ($\beta$ from the full regression) converges to the following:
 
 $$\beta^{*} \approx \hat{\beta}_{X,W_{1}} - \delta \times \left[\hat{\beta}_{X} - \hat{\beta}_{X,W_{1}}\right] \times \frac{R_{max}^{2} - R_{X,W_{1}}^{2}}{R_{X,W_{1}}^{2} - R_{X}^{2}}.$$
 
-If we relax the assumption of equal "relative contributions" between the observed covariates and $Y$ versus the observed covariates and $X$, then the results are a little more complicated. In that case, @oster2017 shows that $$\beta^{*} = \hat{\beta}_{X,W_{1}} - \nu_{1},$$ or $$\beta^{*} \in \left\{ \hat{\beta}_{X,W_{1}} - \nu_{1}, \hat{\beta}_{X,W_{1}} - \nu_{2}, \hat{\beta}_{X,W_{1}} - \nu_{3} \right\}.$$
+If we relax the assumption of equal "relative contributions" between the observed covariates and $Y$ versus the observed covariates and $X$, then the results are a little more complicated. In that case, @oster2019 shows that $$\beta^{*} = \hat{\beta}_{X,W_{1}} - \nu_{1},$$ or $$\beta^{*} \in \left\{ \hat{\beta}_{X,W_{1}} - \nu_{1}, \hat{\beta}_{X,W_{1}} - \nu_{2}, \hat{\beta}_{X,W_{1}} - \nu_{3} \right\}.$$
 
 # References
