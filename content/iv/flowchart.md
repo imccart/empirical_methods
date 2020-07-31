@@ -43,7 +43,3 @@ graph TD;
     click C2 "/" "Try something else"
     click H "https://davidcard.berkeley.edu/papers/card-dellavigna-pagelimits.pdf" "Page limits are non-binding."
 {{< /diagram >}}
-
-
-<script src="https://cdn.rawgit.com/knsv/mermaid/master/dist/mermaid.min.js"></script>
-<link rel="stylesheet" href="https://cdn.rawgit.com/knsv/mermaid/master/dist/mermaid.css">
