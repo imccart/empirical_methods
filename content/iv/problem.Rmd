@@ -59,7 +59,9 @@ There is also a Stata command, `psacalc`, to do these calculations for us!
 
 ## IV vs OLS
 
+An easy way to assess the need for IV is to simply test whether your IV results are sufficiently different from OLS. That's the spirit of the Hausman test (really, the Durbin-Wu-Hausman test). The original test introduced in @hausman1978 is not specific to endogeneity...it's really just a misspecification test, comparing the estimates from one estimator (that is efficient under the null) to that of another estimator that is consistent but inefficient under the null. 
 
+@davidson1993
 
 
 # References
