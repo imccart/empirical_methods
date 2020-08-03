@@ -1,0 +1,26 @@
+---
+title: "Testing the First Stage"
+date: '2020-08-03'
+output: 
+  blogdown::html_document2:
+    toc: TRUE
+    toc_float: TRUE
+    toc_depth: 3
+bibliography: 'D:/CloudStation/Professional/Bibliography/BibTeX_Library.bib'
+math: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+The "first stage" is just a common term for a regression of the endogenous variable, $x$, on your instrument, $z$ (and any other exogenous variables). If you have more than one endogeous variable, then you will have more than one first stage, but all of your instruments should be in each of those regressions. The intuition is simple, if you have a proposed instrument, it should at least be correlated with your endogenous variable of interest (after conditioning on all other exogenous variables already in the model). As with lots of econometrics, this sounds simple until it's not.
+
+![](https://media.giphy.com/media/14xS2Ey9TXH0Gs/giphy.gif)
+
+
+## Case 1: One endogenous variable
+This is the simplest possible setup, and one in which you essentially focus on the significance (or, in the case of more than one instrument, joint significance) of your instruments in a regression of $x$ on $z$ and all other exogenous variables. As is well-known, an $F$ statistic of 10 is considered a decent rule-of-thumb for testing the first stage. This value was first proposed in @staiger1997, but the literature has probably taken this threshold a little too seriously (see Figure 1 in @andrews2019, which shows a big spike at 10 in the empirical distribution of reported F-stats among papers published in the AER). Note that this rule of thumb threshold is not the same as just testing that the first stage coefficient is 0 (or that all coefficients are jointly 0). The critical values are different because standard inference for $\beta$ (the coefficients on $x$ in the regression of interest) is unreliable if the coefficients on the instruments are sufficiently close to 0.
+
+Unfortunately, the standard $F$-statistic is only directly applicable in the homoskedastic case. In the more realistic heteroskedastic setting, 
+
