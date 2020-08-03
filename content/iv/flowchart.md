@@ -50,7 +50,7 @@ graph TD;
     E --> |"ouch, no bueno"| C2
     G --> |"um, define sensitive"| C2
     G --> |"not too bad!"| H(["What am I<br> estimating, again?"])
-    H --> |"can I be done?| I(["Go forth and write<br> that appendix!"])
+    H --> |"can I be done?"| I(["Go forth and write<br> that appendix!"])
     click B "/iv/problem" "Pre-testing"
     click C2 "/" "Try something else"
     click I "https://davidcard.berkeley.edu/papers/card-dellavigna-pagelimits.pdf" "Page limits are non-binding."
