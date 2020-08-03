@@ -1,0 +1,28 @@
+---
+title: "Are your instruments any good?"
+date: '2020-08-03'
+output: 
+  blogdown::html_document2:
+    toc: TRUE
+    toc_float: TRUE
+    toc_depth: 3
+bibliography: 'D:/CloudStation/Professional/Bibliography/BibTeX_Library.bib'
+math: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+If you've made it this far, then you are confident that you have some real endogeneity problems and that IV is at least a possibility. Before going any further, we have to put your instruments to the test. Cue the montage.
+
+![](https://media.giphy.com/media/3oz8xFAkMSb1RnZpNm/giphy.gif)
+
+This stage is all about testing the three key assumptions to any IV. Click on the links below to go to more detail on each assumption, or go back to the [flowchart](/iv/flowchart).
+
+1. [First stage](/iv/step1_firststage): Our instrument must be correlated with the endogenous variable of interest.
+
+2. [Exogeneity](/iv/step1_exog): Our instrument must be exogenous.
+
+3. [Excludability](/iv/step1_excl): The instrument must be correlated with the outcome, but only through the endogenous variable.

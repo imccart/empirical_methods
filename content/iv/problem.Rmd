@@ -1,5 +1,5 @@
 ---
-title: "Pre-testing the Need for IV"
+title: "How big is the problem?"
 date: '2020-08-03'
 output: 
   blogdown::html_document2:
@@ -14,8 +14,7 @@ math: true
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-
-I've already oversold this section. There is no magic "test" for whether you need IV.
+It would be great if we could test for whether we need IV or not. But unfortunately, I've already oversold this section. There is no magic "test" for whether you need IV.
 
 ![](https://media.giphy.com/media/oXB0K4oFw3fck/giphy.gif)
 
