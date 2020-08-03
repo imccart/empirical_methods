@@ -30,8 +30,18 @@ graph TD;
     D2 --> E
     D3 --> E
     end
-    subgraph two ["Stage 2: Still not in the clear"]
+    subgraph two ["Stage 1b: Something is better than nothing"]
+    E --> |"kind of ok"| e1(["Some violations"])
+    e1 --> f1(["first-stage"])
+    e1 --> f2(["exogeneity"])
+    e1 --> f3(["exclusion"])
+    f1 --> g(["pick something"])
+    f2 --> g
+    f3 --> g
+    end
+    subgraph three ["Stage 2: Still not in the clear"]
     E --> |"so far so good!"| E1(["How sensitive are<br> the results?"])
+    g --> E1
     E1 --> F1(["IV is biased!"])
     E1 --> F2(["what about outliers?"])
     F1 --> G(["assess sensitivity"])
@@ -39,9 +49,10 @@ graph TD;
     end
     E --> |"ouch, no bueno"| C2
     G --> |"um, define sensitive"| C2
-    G --> |"not too bad!"| H(["Go forth and write<br> that appendix!"])
+    G --> |"not too bad!"| H(["What am I<br> estimating, again?"])
+    H --> |"can I be done?| I(["Go forth and write<br> that appendix!"])
     click B "/iv/problem" "Pre-testing"
     click C2 "/" "Try something else"
-    click H "https://davidcard.berkeley.edu/papers/card-dellavigna-pagelimits.pdf" "Page limits are non-binding."
+    click I "https://davidcard.berkeley.edu/papers/card-dellavigna-pagelimits.pdf" "Page limits are non-binding."
 {{< /diagram >}}
 

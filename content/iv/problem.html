@@ -1,6 +1,6 @@
 ---
 title: "Pre-testing the Need for IV"
-date: '2020-07-30'
+date: '2020-08-03'
 output: 
   blogdown::html_document2:
     toc: TRUE
@@ -42,6 +42,10 @@ where <span class="math inline">\(\nu_{1}\)</span>, <span class="math inline">\(
 </div>
 <div id="iv-vs-ols" class="section level2">
 <h2>IV vs OLS</h2>
+<p>An easy way to assess the need for IV is to simply test whether your IV results are sufficiently different from OLS. That’s the spirit of the Hausman test. The original test introduced in <span class="citation">Hausman (1978)</span> is not specific to endogeneity…it’s a more general misspecification test, comparing the estimates from one estimator (that is efficient under the null) to that of another estimator that is consistent but inefficient under the null. The test in the context of IV is also referred to as the Durbin-Wu-Hausman test, due to the series of papers pre-dating <span class="citation">Hausman (1978)</span>, including <span class="citation">Durbin (1954)</span>, <span class="citation">Wu (1973)</span>, and <span class="citation">Wu (1974)</span>.</p>
+<p>This test is easily implemented as an “artificial” or “augmented” regression. Denoting our outcome by <span class="math inline">\(y\)</span>, our instruments by <span class="math inline">\(z\)</span>, our endogeous variables by <span class="math inline">\(x_{1}\)</span>, and other exogenous variables by <span class="math inline">\(x_{2}\)</span>, we first regress each of the variables in <span class="math inline">\(x_{1}\)</span> on <span class="math inline">\(x_{2}\)</span> and <span class="math inline">\(z\)</span>. Then we take the residuals from those regressions, denoted <span class="math inline">\(\hat{v}\)</span>, and include them in the standard OLS regression of <span class="math inline">\(y\)</span> on <span class="math inline">\(x_{1}\)</span>, <span class="math inline">\(x_{2}\)</span>, and <span class="math inline">\(\hat{v}\)</span>.</p>
+<p>The biggest barrier to this test in practice is that it assumes we have a valid and strong set of instruments, <span class="math inline">\(z\)</span>. Since that’s usually the biggest barrier to causal inference with IV, it becomes a major practical problem. For example, if you reject the null and conclude that estimates from OLS and IV are statistically different, can you be sure that the difference is “real” and not a statistical artifact of weak or invalid instruments? The whole process becomes pretty circular.</p>
+<p><img src="https://media.giphy.com/media/dyGiQTZrrASFWp9qP8/source.gif" /></p>
 </div>
 <div id="references" class="section level1 unnumbered">
 <h1>References</h1>
@@ -49,8 +53,20 @@ where <span class="math inline">\(\nu_{1}\)</span>, <span class="math inline">\(
 <div id="ref-altonji2005">
 <p>Altonji, Joseph G, Todd E Elder, and Christopher R Taber. 2005. “An Evaluation of Instrumental Variable Strategies for Estimating the Effects of Catholic Schooling.” <em>Journal of Human Resources</em> 40 (4): 791–821.</p>
 </div>
+<div id="ref-durbin1954">
+<p>Durbin, James. 1954. “Errors in Variables.” <em>Revue de L’institut International de Statistique</em>, 23–32.</p>
+</div>
+<div id="ref-hausman1978">
+<p>Hausman, Jerry A. 1978. “Specification Tests in Econometrics.” <em>Econometrica: Journal of the Econometric Society</em>, 1251–71.</p>
+</div>
 <div id="ref-oster2019">
 <p>Oster, Emily. 2019. “Unobservable Selection and Coefficient Stability: Theory and Evidence.” <em>Journal of Business &amp; Economic Statistics</em> 37 (2): 187–204. <a href="https://doi.org/10.1080/07350015.2016.1227711">https://doi.org/10.1080/07350015.2016.1227711</a>.</p>
+</div>
+<div id="ref-wu1973">
+<p>Wu, De-Min. 1973. “Alternative Tests of Independence Between Stochastic Regressors and Disturbances.” <em>Econometrica: Journal of the Econometric Society</em>, 733–50.</p>
+</div>
+<div id="ref-wu1974">
+<p>———. 1974. “Alternative Tests of Independence Between Stochastic Regressors and Disturbances: Finite Sample Results.” <em>Econometrica: Journal of the Econometric Society</em>, 529–46.</p>
 </div>
 </div>
 </div>
