@@ -20,7 +20,18 @@ The "first stage" is just a common term for a regression of the endogenous varia
 
 
 ## Case 1: One endogenous variable
-This is the simplest possible setup, and one in which you essentially focus on the significance (or, in the case of more than one instrument, joint significance) of your instruments in a regression of $x$ on $z$ and all other exogenous variables. As is well-known, an $F$ statistic of 10 is considered a decent rule-of-thumb for testing the first stage. This value was first proposed in @staiger1997, but the literature has probably taken this threshold a little too seriously (see Figure 1 in @andrews2019, which shows a big spike at 10 in the empirical distribution of reported F-stats among papers published in the AER). Note that this rule of thumb threshold is not the same as just testing that the first stage coefficient is 0 (or that all coefficients are jointly 0). The critical values are different because standard inference for $\beta$ (the coefficients on $x$ in the regression of interest) is unreliable if the coefficients on the instruments are sufficiently close to 0.
+This is the simplest possible setup, and one in which you essentially focus on the significance (or, in the case of more than one instrument, joint significance) of your instruments in a regression of $x$ on $z$ and all other exogenous variables. As is well-known, an $F$ statistic of 10 is considered a decent rule-of-thumb for testing the first stage. This value was first proposed in @staiger1997, but the literature has probably taken this threshold a little too seriously (see Figure 1 in @andrews2019, which shows a big spike at 10 in the empirical distribution of reported F-stats among papers published in the AER). 
 
-Unfortunately, the standard $F$-statistic is only directly applicable in the homoskedastic case. In the more realistic heteroskedastic setting, 
+Another popular first-stage assessment is the partial $R^{2}$, sometimes called Shea's Partial $R^{2}$ [@shea1997]. This is the $R^{2}$ of a regression of our endogenous variable on the instruments after partialling out the other exogenous variables. In other words, we regress our endogenous variable on our instrument(s), and we regress each of the exogenous covariates on our instrument(s). We then take the residual from each of those regressions and run another regression of the residualized endogenous variable against the residualized instruments. The $R^{2}$ of that regression is the partial $R^{2}$ because the influence of the the other exogenous variables has been removed. If the partial $R^{2}$ is "low", then we should suspect that our instruments are weak. The problem is that there is no clear value for "low" or "high", and the distribution of this statistic is nonstandard. I suspect that, for this reason, Shea's Partial $R^{2}$ is not a commonly-reported measure of instrument strength in most published work.
+
+## Case 2: Multiple endogenous variables
+With more than one endogenous variables, @stock2005 develops critical values based on the Cragg-Donald statistic [@cragg1993]. The null in this case is that the instrument matrix has rank less than the number of endogenous variables. Shea's Partial $R^{2}$ isn't particularly informative in the case of multiple endogenous variables, again a potential reason for its limited use in practice.
+
+
+## Heteroskedasticity
+Unfortunately, the standard $F$-statistic or Cragg-Donald statistics are only directly applicable in the homoskedastic case. In the more realistic heteroskedastic setting, the appropriate tests are more complicated.
+
+In the case of a single endogenous variable, authors often report a "robust" $F$-stat. This is fine and is equivalent to a special case of the Kleibergen-Papp Wald statistic. Similarly, the Kleibergen-Papp Wald statistic is a robust version of the Cragg-Donald statistic in the case of multiple endogenous variables.
+
+Finally, @olea2013 propose an "effective" $F$-stat that allows for heteroskedasticity and works for single or multiple endogenous variables.
 
