@@ -19,19 +19,25 @@ The "first stage" is just a common term for a regression of the endogenous varia
 ![](https://media.giphy.com/media/14xS2Ey9TXH0Gs/giphy.gif)
 
 
+## Underidentification versus weak instruments
+It is easy to confuse the question of underidentification versus weak instruments, but they are different issues. In the case of underidentification, we are explicitly interested in testing whether the partial correlation between the instrument(s) and the endogenous variable(s) is 0. In other words, is the instrument matrix of full rank? But it is possible to reject the null that the instrument and endogenous variable are uncorrelated, while still have very weak instruments. The literature therefore distinguishes between tests of 0 correlation versus tests that are robust to weak instruments (e.g., a test for which rejection of the null suggests that the instruments are sufficiently "strong"). I'll try to make this distinction as much as possible below.
+
+
 ## Case 1: One endogenous variable
-This is the simplest possible setup, and one in which you essentially focus on the significance (or, in the case of more than one instrument, joint significance) of your instruments in a regression of $x$ on $z$ and all other exogenous variables. As is well-known, an $F$ statistic of 10 is considered a decent rule-of-thumb for testing the first stage. This value was first proposed in @staiger1997, but the literature has probably taken this threshold a little too seriously (see Figure 1 in @andrews2019, which shows a big spike at 10 in the empirical distribution of reported F-stats among papers published in the AER). 
+This is the simplest possible setup, and one in which you essentially focus on the significance (or, in the case of more than one instrument, joint significance) of your instruments in a regression of $x$ on $z$ and all other exogenous variables. A standard t-test or $F$-test using traditional critical values would be a test of underidentification.
+
+As is well-known, an $F$ statistic of 10 is considered a decent rule-of-thumb for testing the first stage. This value was first proposed in @staiger1997, and it's important because it's larger than the standard critical values. The reason it's larger is because the @staiger1997 critical values allow for weak instruments. While the rule-of-thumb value of 10 is common and useful, the literature has probably taken this threshold a little too seriously (see Figure 1 in @andrews2019, which shows a big spike at 10 in the empirical distribution of reported F-stats among papers published in the AER). 
 
 Another popular first-stage assessment is the partial $R^{2}$, sometimes called Shea's Partial $R^{2}$ [@shea1997]. This is the $R^{2}$ of a regression of our endogenous variable on the instruments after partialling out the other exogenous variables. In other words, we regress our endogenous variable on our instrument(s), and we regress each of the exogenous covariates on our instrument(s). We then take the residual from each of those regressions and run another regression of the residualized endogenous variable against the residualized instruments. The $R^{2}$ of that regression is the partial $R^{2}$ because the influence of the the other exogenous variables has been removed. If the partial $R^{2}$ is "low", then we should suspect that our instruments are weak. The problem is that there is no clear value for "low" or "high", and the distribution of this statistic is nonstandard. I suspect that, for this reason, Shea's Partial $R^{2}$ is not a commonly-reported measure of instrument strength in most published work.
 
+Finally, @olea2013 propose an "effective" $F$-stat that allows for heteroskedasticity. This hasn't received much attention in the applied literature, but @andrews2019 encourages wider adoption of such a test. You can implement this in Stata with `weakivtest`. The effective $F$-stat is equivalent to a robust $F$-stat (i.e., the usual first-stage $F$-stat using robust standard errors) in the case of a single instrument. But with multiple instruments and one endogenous variable, the effective $F$-stat looks to the best option for assessing the strength of your instruments.
+
+The case of a single endogenous variable is clean and simple. We have a good handle on both the homoskedastic and the heteroskedastic case, and inference can easily extend to the case of "weak" (but still correlated) instruments by increasing the critical values (either from @stock2005, @olea2013, or with the rule-of-thumb value of 10). 
+
+
 ## Case 2: Multiple endogenous variables
-With more than one endogenous variables, @stock2005 develops critical values based on the Cragg-Donald statistic [@cragg1993]. The null in this case is that the instrument matrix has rank less than the number of endogenous variables. Shea's Partial $R^{2}$ isn't particularly informative in the case of multiple endogenous variables, again a potential reason for its limited use in practice.
+With more than one endogenous variable, @stock2005 develops critical values based on the Cragg-Donald statistic [@cragg1993]. A statistic similar to Cragg-Donald is the Anderson LM statistic, both of which are readily reported in Stata's `ivreg2` command. Unfortunately, both statistics require the assumption of homoskedastic errors. Shea's Partial $R^{2}$ also isn't particularly informative in the case of multiple endogenous variables, again a potential reason for its limited use in practice.
 
+In the more realistic heteroskedastic setting, the appropriate tests are more complicated. The Kleibergen-Papp Wald statistic is a robust version of the Cragg-Donald statistic in this case; however, the Kleibergen-Paap statistic is purely an "underidentification" test, and it is possible to reject the null while still having very weak correlation between your instruments and endogenous variables.
 
-## Heteroskedasticity
-Unfortunately, the standard $F$-statistic or Cragg-Donald statistics are only directly applicable in the homoskedastic case. In the more realistic heteroskedastic setting, the appropriate tests are more complicated.
-
-In the case of a single endogenous variable, authors often report a "robust" $F$-stat. This is fine and is equivalent to a special case of the Kleibergen-Papp Wald statistic. Similarly, the Kleibergen-Papp Wald statistic is a robust version of the Cragg-Donald statistic in the case of multiple endogenous variables.
-
-Finally, @olea2013 propose an "effective" $F$-stat that allows for heteroskedasticity and works for single or multiple endogenous variables.
-
+The Anderson-Rubin test
