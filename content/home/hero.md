@@ -44,10 +44,10 @@ title = "methods. (kind of) organized."
   
 # Note. An optional note to show underneath the links.
 [cta_note]
-  label = 'last updated July 2020'
+  label = 'last updated August 2020'
 +++
 
-**Helping researchers navigate common methods and identification strategies in applied empirical microeconomics**
+**Helping researchers navigate the world of identification and causal inference in applied empirical microeconomics**
 
 ---
 
