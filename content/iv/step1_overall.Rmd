@@ -25,4 +25,4 @@ This stage is all about testing the three key assumptions to any IV. Click on th
 
 2. [Exogeneity](/iv/step1_exog): Our instrument must be exogenous.
 
-3. [Excludability](/iv/step1_excl): The instrument must be correlated with the outcome, but only through the endogenous variable.
+3. [Excludability](/iv/step1_exclude): The instrument must be correlated with the outcome, but only through the endogenous variable.
