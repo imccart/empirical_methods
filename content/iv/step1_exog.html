@@ -15,7 +15,8 @@ math: true
 
 <p>Unfortunately, this is again an area where I’ve already oversold the topic. In general, we can’t test for instrument exogeneity. It’s just one of those assumptions that we have to maintain if we’re going to use IV.</p>
 <p><img src="https://media.giphy.com/media/3ohhwAUoWvd7BeEkqA/giphy.gif" /></p>
-<p>But all is not lost. We can (somewhat) test this assumption if we have more instruments than we do endogenous variables (i.e., if we have an overidentified model). With homoskedastic errors, we run a Sargan test, and with heteroskedastic errors, we use the Hansen’s <em>J</em> test. These are overidentification tests, and the null in each test is that your instruments are exogenous. Rejecting the null therefore suggests we might have a problem. But failing to reject the null doesn’t necessarily mean exogeneity holds. So, there’s that.</p>
+<p>But all is not lost. We can (somewhat) test this assumption if we have more instruments than we do endogenous variables (i.e., if we have an overidentified model). With homoskedastic errors, we run a Sargan test, and with heteroskedastic errors, we use the Hansen’s <em>J</em> test. Each test is readily available in Stata’s <code>ivreg</code> command. For R users, The Sargan test is part of <code>ivreg</code> diagnostics, but the Hansen’s <em>J</em> test isn’t immediately available. So R users have to do a little bit more work, or you can employ the <code>RStata</code> package and run Stata code in R.</p>
+<p>Finally, note that the null in each test is that your instruments are exogenous. Rejecting the null therefore suggests we might have a problem. But failing to reject the null doesn’t necessarily mean exogeneity holds. So, there’s that.</p>
 <p><img src="https://media.giphy.com/media/fo2kRfu3C4Cz3pmlka/giphy.gif" /></p>
 <div id="references" class="section level1">
 <h1>References</h1>

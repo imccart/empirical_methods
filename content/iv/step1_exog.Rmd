@@ -18,7 +18,9 @@ Unfortunately, this is again an area where I've already oversold the topic. In g
 
 ![](https://media.giphy.com/media/3ohhwAUoWvd7BeEkqA/giphy.gif)
 
-But all is not lost. We can (somewhat) test this assumption if we have more instruments than we do endogenous variables (i.e., if we have an overidentified model). With homoskedastic errors, we run a Sargan test, and with heteroskedastic errors, we use the Hansen's *J* test. These are overidentification tests, and the null in each test is that your instruments are exogenous. Rejecting the null therefore suggests we might have a problem. But failing to reject the null doesn't necessarily mean exogeneity holds. So, there's that.
+But all is not lost. We can (somewhat) test this assumption if we have more instruments than we do endogenous variables (i.e., if we have an overidentified model). With homoskedastic errors, we run a Sargan test, and with heteroskedastic errors, we use the Hansen's *J* test. Each test is readily available in Stata's `ivreg` command. For R users, The Sargan test is part of `ivreg` diagnostics, but the Hansen's *J* test isn't immediately available. So R users have to do a little bit more work, or you can employ the `RStata` package and run Stata code in R. 
+
+Finally, note that the null in each test is that your instruments are exogenous. Rejecting the null therefore suggests we might have a problem. But failing to reject the null doesn't necessarily mean exogeneity holds. So, there's that.
 
 ![](https://media.giphy.com/media/fo2kRfu3C4Cz3pmlka/giphy.gif)
 
