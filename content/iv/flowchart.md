@@ -54,6 +54,7 @@ graph TD;
     click B "/iv/problem" "Pre-testing"
     click C1 "/iv/step1_overall" "Stage 1"
     click D1 "/iv/step1_firststage" "Testing the first stage"
+    click D2 "/iv/step1_exog" "Testing the exogeneity assumption"
     click C2 "/" "Try something else"
     click I "https://davidcard.berkeley.edu/papers/card-dellavigna-pagelimits.pdf" "Page limits are non-binding."
 {{< /diagram >}}
