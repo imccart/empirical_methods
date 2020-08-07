@@ -1,6 +1,6 @@
 ---
 title: "Testing for Exogeneity"
-date: '2020-08-03'
+date: '2020-08-07'
 output: 
   blogdown::html_document2:
     toc: TRUE
@@ -15,9 +15,17 @@ math: true
 
 <p>Unfortunately, this is again an area where I’ve already oversold the topic. In general, we can’t test for instrument exogeneity. It’s just one of those assumptions that we have to maintain if we’re going to use IV.</p>
 <p><img src="https://media.giphy.com/media/3ohhwAUoWvd7BeEkqA/giphy.gif" /></p>
-<p>But all is not lost. We can (somewhat) test this assumption if we have more instruments than we do endogenous variables (i.e., if we have an overidentified model). With homoskedastic errors, we run a Sargan test, and with heteroskedastic errors, we use the Hansen’s <em>J</em> test. Each test is readily available in Stata’s <code>ivreg</code> command. For R users, The Sargan test is part of <code>ivreg</code> diagnostics, but the Hansen’s <em>J</em> test isn’t immediately available. So R users have to do a little bit more work, or you can employ the <code>RStata</code> package and run Stata code in R.</p>
+<p>But all is not lost. We can (somewhat) test this assumption if we have more instruments than we do endogenous variables (i.e., if we have an overidentified model). With homoskedastic errors, we run a Sargan test, and with heteroskedastic errors, we use the Hansen’s <em>J</em> test <span class="citation">(Sargan 1958, @hansen1982)</span>. Each test is readily available in Stata’s <code>ivreg</code> command. For R users, The Sargan test is part of <code>ivreg</code> diagnostics, but the Hansen’s <em>J</em> test isn’t immediately available without employing other estimators from other packages. So R users have to do a little bit more work, or you can use the <code>RStata</code> package and run Stata code in R.</p>
 <p>Finally, note that the null in each test is that your instruments are exogenous. Rejecting the null therefore suggests we might have a problem. But failing to reject the null doesn’t necessarily mean exogeneity holds. So, there’s that.</p>
 <p><img src="https://media.giphy.com/media/fo2kRfu3C4Cz3pmlka/giphy.gif" /></p>
-<div id="references" class="section level1">
+<div id="references" class="section level1 unnumbered">
 <h1>References</h1>
+<div id="refs" class="references hanging-indent">
+<div id="ref-hansen1982">
+<p>Hansen, Lars Peter. 1982. “Large Sample Properties of Generalized Method of Moments Estimators.” <em>Econometrica: Journal of the Econometric Society</em>, 1029–54.</p>
+</div>
+<div id="ref-sargan1958">
+<p>Sargan, John D. 1958. “The Estimation of Economic Relationships Using Instrumental Variables.” <em>Econometrica: Journal of the Econometric Society</em>, 393–415.</p>
+</div>
+</div>
 </div>
