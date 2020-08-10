@@ -16,7 +16,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 The exclusion restriction says that your instruments do not directly affect your outcome, so that it is appropriately "excluded" from the main equation of interest. This assumption goes by different names and is sometimes combined with other IV assumptions. For example, sometimes you see this assumption lumped into the first stage requirement and stated as an "only-through" assumption (i.e., the instrument affects the outcome only through the endogenous variable of interest).
 
-Regardless, the exclusion restriction is hard to test because the instrument should also be correlated with the endogenous variable. If you have an overidentified model, then you can test the exclusion restriction alongside the exogeneity assumption for a subset of instruments. 
+Regardless, the exclusion restriction is hard to test because the instrument should also be correlated with the endogenous variable. If you have an overidentified model, then you can test the exclusion restriction alongside the exogeneity assumption for a subset of instruments [@beckert2020]. Paraphrasing @beckert2020, assuming we have $m$ instruments and $n$ endogenous variables, then under the maintained assumption that there are at least $n$ valid instruments, you can test the null that all instruments are valid against the alternative that up to $m - n$ instruments are valid.
 
+We can implement this test easily. First, we estimate the first-stage regressions (regression of our endogenous variables on the instruments and all other exogenous variables). Second, we save the residuals from these regressions, denoted $\hat{u}$. Third, we estimate the "artificial" regression $$y = \beta x + \delta \tilde{z} + \gamma \hat{u} + \varepsilon,$$ where $\tilde{z}$ denotes a subset of $m-n$ instruments from the full instrument matrix $z$. We then test the null that $\delta=0$ using a standard F-test.
+
+
+@kippersluis2018 presents another scenario in which we can directly test the exclusion restriction. 
 
 # References
