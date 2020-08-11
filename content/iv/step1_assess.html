@@ -1,0 +1,42 @@
+---
+title: "Assessing your instruments"
+date: '2020-08-11'
+output: 
+  blogdown::html_document2:
+    toc: TRUE
+    toc_float: TRUE
+    toc_depth: 3
+bibliography: 'D:/CloudStation/Professional/Bibliography/BibTeX_Library.bib'
+math: true
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>There’s no special formula here. Ideally, you have a strong first-stage, even after considering critical values that can accommdate “weak” instruments. If you have an overidentified model, then hopefully you can fail to reject the null of exogeneity with the Sargan or Hansen’s <em>J</em> test. And in such a model, hopefully you can also fail to reject the null that a subset of additional instruments have zero direct effect on your outcome, thereby supporting the excludability assumption.</p>
+<p>But in reality, we are often confronted with a difficult mix of results. You may have strong evidence of a first stage for some instruments but not for all of them. In that case, <span class="citation">Angrist and Pischke (2009)</span> recommend that you take your best instruments and pursue a just-identified model. In such a model, you no longer have any tests for exogeneity, and your only test for exclubility is the “zero-first-stage” test on a subset of observations for which the first stage is assumed to be 0. If you have sufficiently strong instruments and a solid argument for excludability/exogeneity (hopefully with some empirical evidence to support your argument), then you can proceed to some sensitivity analyses in <a href="/iv/step2_overall">Step 2</a>.</p>
+<p>If you appear to have relatively strong instruments but are concerned about the exogeneity or excludability assumptions, then you may consider alternative estimation strategies that allow for <em>some</em> amount of violation of those assumptions. You may instead have some evidence of weak instruments, in which case you can consider alternative estimators that are robust to weak instruments (perhaps a good idea regardless, as a sensitivity analysis). Ultimately, if you have good evidence that your instruments are either 1) strong or 2) exogenous and excludable, then it’s possible to push forward with estimators that are robust to other violations. If you’re in this boat, you can move to <a href="/iv/step1b_overall">Step 1B</a>.</p>
+<p>But if you have weak instruments that also don’t satisfy the exogeneity or excludability assumptions, then you may need to go back to the drawing board. In such a world, IV is likely to introduce more problems than it solves. If you’re in this latter situation, all is still not lost. You might be able to say something interesting, either with assumptions on the error terms as in <span class="citation">Millimet and Tchernis (2013)</span> or with a more agnostic bounding approach as in <span class="citation">Manski and Pepper (2000)</span>, <span class="citation">Kreider and Pepper (2007)</span>, <span class="citation">Kreider et al. (2012)</span>, and <span class="citation">Gundersen, Kreider, and Pepper (2012)</span>, among others.</p>
+<div id="references" class="section level1 unnumbered">
+<h1>References</h1>
+<div id="refs" class="references hanging-indent">
+<div id="ref-angrist2009">
+<p>Angrist, J., and J. Pischke. 2009. <em>Mostly Harmless Econometrics</em>. Princeton, NJ: Princeton University Press.</p>
+</div>
+<div id="ref-gundersen2012">
+<p>Gundersen, Craig, Brent Kreider, and John Pepper. 2012. “The Impact of the National School Lunch Program on Child Health: A Nonparametric Bounds Analysis.” <em>Journal of Econometrics</em> 166 (1): 79–91.</p>
+</div>
+<div id="ref-kreider2007">
+<p>Kreider, Brent, and John Pepper. 2007. “Disability and Employment: Re-Evaluating the Evidence in Light of Reporting Errors.” <em>Journal of the American Statistical Association</em> 102: 432–41.</p>
+</div>
+<div id="ref-kreider2012">
+<p>Kreider, Brent, John Pepper, Craig Gundersen, and Dean Jolliffe. 2012. “Identifying the Effects of Snap (Food Stamps) on Child Health Outcomes When Participation Is Endogenous and Misreported.” <em>Journal of the American Statistical Association</em> 107: 958–75.</p>
+</div>
+<div id="ref-manski2000">
+<p>Manski, Charles, and John Pepper. 2000. “Monotone Instrumental Variables: With an Application to the Returns to Schooling.” <em>Econometrica</em> 68: 997–1010.</p>
+</div>
+<div id="ref-millimet2013">
+<p>Millimet, Daniel L, and Rusty Tchernis. 2013. “Estimation of Treatment Effects Without an Exclusion Restriction: With an Application to the Analysis of the School Breakfast Program.” <em>Journal of Applied Econometrics</em> 28: 982–1017.</p>
+</div>
+</div>
+</div>

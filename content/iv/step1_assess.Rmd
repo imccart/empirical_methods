@@ -1,0 +1,25 @@
+---
+title: "Assessing your instruments"
+date: '2020-08-11'
+output: 
+  blogdown::html_document2:
+    toc: TRUE
+    toc_float: TRUE
+    toc_depth: 3
+bibliography: 'D:/CloudStation/Professional/Bibliography/BibTeX_Library.bib'
+math: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+There's no special formula here. Ideally, you have a strong first-stage, even after considering critical values that can accommdate "weak" instruments. If you have an overidentified model, then hopefully you can fail to reject the null of exogeneity with the Sargan or Hansen's *J* test. And in such a model, hopefully you can also fail to reject the null that a subset of additional instruments have zero direct effect on your outcome, thereby supporting the excludability assumption. 
+
+But in reality, we are often confronted with a difficult mix of results. You may have strong evidence of a first stage for some instruments but not for all of them. In that case, @angrist2009 recommend that you take your best instruments and pursue a just-identified model. In such a model, you no longer have any tests for exogeneity, and your only test for exclubility is the "zero-first-stage" test on a subset of observations for which the first stage is assumed to be 0. If you have sufficiently strong instruments and a solid argument for excludability/exogeneity (hopefully with some empirical evidence to support your argument), then you can proceed to some sensitivity analyses in [Step 2](/iv/step2_overall).
+
+If you appear to have relatively strong instruments but are concerned about the exogeneity or excludability assumptions, then you may consider alternative estimation strategies that allow for *some* amount of violation of those assumptions. You may instead have some evidence of weak instruments, in which case you can consider alternative estimators that are robust to weak instruments (perhaps a good idea regardless, as a sensitivity analysis). Ultimately, if you have good evidence that your instruments are either 1) strong or 2) exogenous and excludable, then it's possible to push forward with estimators that are robust to other violations. If you're in this boat, you can move to [Step 1B](/iv/step1b_overall).
+
+But if you have weak instruments that also don't satisfy the exogeneity or excludability assumptions, then you may need to go back to the drawing board. In such a world, IV is likely to introduce more problems than it solves. If you're in this latter situation, all is still not lost. You might be able to say something interesting, either with assumptions on the error terms as in @millimet2013 or with a more agnostic bounding approach as in @manski2000, @kreider2007, @kreider2012, and @gundersen2012, among others.
+
+# References
