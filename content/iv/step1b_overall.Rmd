@@ -21,8 +21,6 @@ If you're here, it means you're uncomfortable with some of the required IV assum
 
 Either way, the goal now is to consider treatment effect estimates that are robust to violations of some of the key IV assumptions. Click on the links below for more detail:
 
-1. [First stage](/iv/step2_firststage): Weak instruments
+1. [First stage](/iv/step1b_firststage): Weak instruments
 
-2. [Exogeneity](/iv/step2_exog): Instruments are also endogenous
-
-3. [Excludability](/iv/step2_exclude): The instrument directly affects the outcome
+2. [Exogeneity/Excludability](/iv/step1b_exog_excl): Instruments are also endogenous or directly affect the outcome
