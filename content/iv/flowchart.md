@@ -33,11 +33,9 @@ graph TD;
     subgraph two ["Stage 1b: Something is better than nothing"]
     E --> |"kind of ok"| e1(["Some violations"])
     e1 --> f1(["first-stage"])
-    e1 --> f2(["exogeneity"])
-    e1 --> f3(["exclusion"])
+    e1 --> f2(["exogeneity/exclusion"])
     f1 --> g(["pick something"])
     f2 --> g
-    f3 --> g
     end
     subgraph three ["Stage 2: Still not in the clear"]
     E --> |"so far so good!"| E1(["How sensitive are<br> the results?"])
@@ -56,6 +54,10 @@ graph TD;
     click D1 "/iv/step1_firststage" "Testing the first stage"
     click D2 "/iv/step1_exog" "Testing the exogeneity assumption"
     click D3 "/iv/step1_exclude" "Testing the exclusion assumption"
+    click E "/iv/step1_assess" "Assessing your instrument tests"
+    click e1 "/iv/step1b_overall" "IVs are OK, but not great"
+    click f1 "/iv/step1b_firststage" "Weak IV Robust Inference"
+    click f2 "/iv/step1b_exog_excl" "Invalid IVs"
     click C2 "/" "Try something else"
     click I "https://davidcard.berkeley.edu/papers/card-dellavigna-pagelimits.pdf" "Page limits are non-binding."
 {{< /diagram >}}

@@ -1,0 +1,15 @@
+---
+title: "Weak Instruments"
+date: '2020-08-11'
+output: 
+  blogdown::html_document2:
+    toc: TRUE
+    toc_float: TRUE
+    toc_depth: 3
+bibliography: 'D:/CloudStation/Professional/Bibliography/BibTeX_Library.bib'
+math: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```

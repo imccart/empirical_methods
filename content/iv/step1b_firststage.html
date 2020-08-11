@@ -16,8 +16,8 @@ math: true
 <p>What do we do if we have weak instruments?</p>
 <p><img src="https://media.giphy.com/media/3oFzlXvco5Wt2gnMcg/giphy.gif" /></p>
 <p>I guess one option is to go look for better instruments, but I’m going to assume you’ve already identified your best potential instruments.</p>
-<div id="weak-iv-robust-inference" class="section level2">
-<h2>Weak IV robust inference</h2>
+<div id="weak-iv-robust-inference" class="section level1">
+<h1>Weak IV robust inference</h1>
 <p>Let’s assume we have our usual equation of interest, <span class="math display">\[y = x_{1} \beta_{1} + x_{2} \beta_{2} + \varepsilon,\]</span> where <span class="math inline">\(x_{1}\)</span> is assumed to be endogenous and <span class="math inline">\(x_{2}\)</span> exogenous. We have some instruments, <span class="math inline">\(z\)</span>, that are correlated with <span class="math inline">\(x_{1}\)</span>. But, we’re concerned that this correlation may be relatively low. Regardless, the coefficient of interest is still <span class="math inline">\(\beta_{1}\)</span>, and so one approach to dealing with weak IVs is to develop a test of <span class="math inline">\(H_{0}: \beta_{1}=0\)</span> that is robust to weak instruments.</p>
 <p>One approach to this is the Anderson-Rubin test <span class="citation">(Anderson, Rubin, and others 1949)</span>. This is a test of <span class="math inline">\(H_{0}: \gamma_{1} = 0\)</span> in the “reduced-form”, <span class="math display">\[y = z \gamma_{1} + x_{2} \gamma_{2} + \nu.\]</span> If we reject this test (i.e., there is evidence that <span class="math inline">\(\gamma_{1} \neq 0\)</span>) then it is also evidence that <span class="math inline">\(\beta_{1} \neq 0\)</span>. That’s because, with weak instruments, the coefficient on <span class="math inline">\(z\)</span> in the first stage regression of <span class="math inline">\(x_{1}\)</span> on <span class="math inline">\(z\)</span> and <span class="math inline">\(x_{2}\)</span> is close to 0 and would tend to decrease the probability of rejecting the null of <span class="math inline">\(\gamma_{1}=0\)</span>.</p>
 <p><span class="citation">Chernozhukov and Hansen (2008)</span> extends this approach by constructing a confidence interval for <span class="math inline">\(\beta_{1}\)</span> that is robust to weak instruments. Using our current notation, they propose the following process:</p>
@@ -28,10 +28,13 @@ math: true
 <li>Construct the confidence region as the set of <span class="math inline">\(b\)</span> such that <span class="math inline">\(W_{s}(b) \leq c(1-p)\)</span>, where <span class="math inline">\(c(1-p)\)</span> is the <span class="math inline">\((1-p)^{th}\)</span> percentile of the <span class="math inline">\(\chi^{2}_{r}\)</span> distribution (<span class="math inline">\(r\)</span> is the number of instruments).</li>
 </ol>
 </div>
-<div id="two-step-robust-inference" class="section level2">
-<h2>Two-step robust inference</h2>
+<div id="two-step-robust-inference" class="section level1">
+<h1>Two-step robust inference</h1>
 <p>One issue with the above approach is that we are really considering a two-stage process. In stage 1, we assess the general strength of the instrument, and in stage 2, if we’ve identified evidence of a weak instrument, then we pursue some form of weak IV robust inference. But failure to account for the first stage in our second stage confidence intervals could lead to some problems, such that we may incorrectly reject the null. This is where some recent methods in <span class="citation">Finlay and Magnusson (2009)</span> and <span class="citation">Andrews (2018)</span> can help in developing confidence intervals that appropriately account for the first-stage of this process. Commands to estimate such confidence intervals are available in Stata with <code>weakiv</code> and <code>twostepweakiv</code>, respectively.</p>
 <p>The result of these intervals, for the purposes of weak IV robust inference, is a range of values <span class="math inline">\(b\)</span> such that the null <span class="math inline">\(H_{0}: \beta_{1}=b\)</span> cannot be rejected (at the given significance level used to construct the interval).</p>
+</div>
+<div id="references" class="section level1 unnumbered">
+<h1>References</h1>
 <div id="refs" class="references hanging-indent">
 <div id="ref-anderson1949">
 <p>Anderson, Theodore W, Herman Rubin, and others. 1949. “Estimation of the Parameters of a Single Equation in a Complete System of Stochastic Equations.” <em>The Annals of Mathematical Statistics</em> 20 (1): 46–63.</p>

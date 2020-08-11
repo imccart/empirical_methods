@@ -21,7 +21,7 @@ What do we do if we have weak instruments?
 I guess one option is to go look for better instruments, but I'm going to assume you've already identified your best potential instruments.
 
 
-## Weak IV robust inference
+# Weak IV robust inference
 Let's assume we have our usual equation of interest, $$y = x_{1} \beta_{1} + x_{2} \beta_{2} + \varepsilon,$$ where $x_{1}$ is assumed to be endogenous and $x_{2}$ exogenous. We have some instruments, $z$, that are correlated with $x_{1}$. But, we're concerned that this correlation may be relatively low. Regardless, the coefficient of interest is still $\beta_{1}$, and so one approach to dealing with weak IVs is to develop a test of $H_{0}: \beta_{1}=0$ that is robust to weak instruments. 
 
 One approach to this is the Anderson-Rubin test [@anderson1949]. This is a test of $H_{0}: \gamma_{1} = 0$ in the "reduced-form", $$y = z \gamma_{1} + x_{2} \gamma_{2} + \nu.$$ If we reject this test (i.e., there is evidence that $\gamma_{1} \neq 0$) then it is also evidence that $\beta_{1} \neq 0$. That's because, with weak instruments, the coefficient on $z$ in the first stage regression of $x_{1}$ on $z$ and $x_{2}$ is close to 0 and would tend to decrease the probability of rejecting the null of $\gamma_{1}=0$. 
@@ -34,7 +34,9 @@ One approach to this is the Anderson-Rubin test [@anderson1949]. This is a test 
 4. Construct the confidence region as the set of $b$ such that $W_{s}(b) \leq c(1-p)$, where $c(1-p)$ is the $(1-p)^{th}$ percentile of the $\chi^{2}_{r}$ distribution ($r$ is the number of instruments).
 
 
-## Two-step robust inference
+# Two-step robust inference
 One issue with the above approach is that we are really considering a two-stage process. In stage 1, we assess the general strength of the instrument, and in stage 2, if we've identified evidence of a weak instrument, then we pursue some form of weak IV robust inference. But failure to account for the first stage in our second stage confidence intervals could lead to some problems, such that we may incorrectly reject the null. This is where some recent methods in @finlay2009 and @andrews2018 can help in developing confidence intervals that appropriately account for the first-stage of this process. Commands to estimate such confidence intervals are available in Stata with `weakiv` and `twostepweakiv`, respectively.
 
 The result of these intervals, for the purposes of weak IV robust inference, is a range of values $b$ such that the null $H_{0}: \beta_{1}=b$ cannot be rejected (at the given significance level used to construct the interval).
+
+# References
