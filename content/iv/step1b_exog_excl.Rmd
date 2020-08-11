@@ -1,5 +1,5 @@
 ---
-title: "Weak Instruments"
+title: "Invalid Instruments"
 date: '2020-08-11'
 output: 
   blogdown::html_document2:
