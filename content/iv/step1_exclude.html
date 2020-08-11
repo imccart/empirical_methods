@@ -14,7 +14,23 @@ math: true
 
 
 <p>The exclusion restriction says that your instruments do not directly affect your outcome, so that it is appropriately “excluded” from the main equation of interest. This assumption goes by different names and is sometimes combined with other IV assumptions. For example, sometimes you see this assumption lumped into the first stage requirement and stated as an “only-through” assumption (i.e., the instrument affects the outcome only through the endogenous variable of interest).</p>
-<p>Regardless, the exclusion restriction is hard to test because the instrument should also be correlated with the endogenous variable. If you have an overidentified model, then you can test the exclusion restriction alongside the exogeneity assumption for a subset of instruments.</p>
-<div id="references" class="section level1">
+<p>Regardless, the exclusion restriction is hard to test because the instrument should also be correlated with the endogenous variable of interest. Isolating variation coming only from the instrument, separately from any variation coming from the instrument via the endogenous variable, is not feasible in a general setting.</p>
+<p><img src="https://media.giphy.com/media/UTX8UTKmpjQgo/giphy.gif" /></p>
+<p>But don’t lose all hope yet. There are a couple of things we can do. One initial test is what <span class="citation">Kippersluis and Rietveld (2018)</span> refers to as a “zero-first-stage” test. The idea is that you have a subsample for which your instrument is not correlated with the endogenous variable of interest. You then regress the outcome on all covariates and the instruments, among the subsample for which there is no first stage effect. The resulting coefficient on the instruments then captures any potential direct effect of the instruments on the outcome (since the correlation with the endogenous variable is 0 by assumption).</p>
+<p>You can go a little further with this, as shown in <span class="citation">Altonji, Elder, and Taber (2005)</span>, and use this approach to directly estimate the extent of the bias from violations of the exclusion restriction. However, a more recent approach to deal with violations of the exclusion restriction is in <span class="citation">(<span class="citeproc-not-found" data-reference-id="conley2012"><strong>???</strong></span>)</span> and <span class="citation">Kippersluis and Rietveld (2018)</span>, which I discuss in more detail in <a href="/step1b_exclude">Step 1B: Violations of the exclusion restriction</a>.</p>
+<p>If you have an overidentified model, then you can test the exclusion restriction alongside the exogeneity assumption for a subset of instruments <span class="citation">(Beckert 2020)</span>. Paraphrasing <span class="citation">Beckert (2020)</span>, assuming we have <span class="math inline">\(m\)</span> instruments and <span class="math inline">\(n\)</span> endogenous variables, then under the maintained assumption that there are at least <span class="math inline">\(n\)</span> valid instruments, you can test the null that all instruments are valid against the alternative that up to <span class="math inline">\(m - n\)</span> instruments are valid.</p>
+<p>We can implement this test easily. First, we estimate the first-stage regressions (regression of our endogenous variables on the instruments and all other exogenous variables). Second, we save the residuals from these regressions, denoted <span class="math inline">\(\hat{u}\)</span>. Third, we estimate the “artificial” regression <span class="math display">\[y = \beta x + \delta \tilde{z} + \gamma \hat{u} + \varepsilon,\]</span> where <span class="math inline">\(\tilde{z}\)</span> denotes a subset of <span class="math inline">\(m-n\)</span> instruments from the full instrument matrix <span class="math inline">\(z\)</span>. We then test the null that <span class="math inline">\(\delta=0\)</span> using a standard F-test.</p>
+<div id="references" class="section level1 unnumbered">
 <h1>References</h1>
+<div id="refs" class="references hanging-indent">
+<div id="ref-altonji2005">
+<p>Altonji, Joseph G, Todd E Elder, and Christopher R Taber. 2005. “An Evaluation of Instrumental Variable Strategies for Estimating the Effects of Catholic Schooling.” <em>Journal of Human Resources</em> 40 (4): 791–821.</p>
+</div>
+<div id="ref-beckert2020">
+<p>Beckert, Walter. 2020. “A Note on Specification Testing in Some Structural Regression Models.” <em>Oxford Bulletin of Economics and Statistics</em> 82 (3): 686–95.</p>
+</div>
+<div id="ref-kippersluis2018">
+<p>Kippersluis, Hans van, and Cornelius A Rietveld. 2018. “Beyond Plausibly Exogenous.” <em>The Econometrics Journal</em> 21 (3): 316–31.</p>
+</div>
+</div>
 </div>
