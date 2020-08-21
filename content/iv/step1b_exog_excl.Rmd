@@ -13,3 +13,7 @@ math: true
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+> "The best laid plans of mice and men often go awry"
+
+No matter how great you think your instrument is, your data may say otherwise. Maybe your "zero-first-stage" test fails, or maybe you have an overidentified model and you reject your Sargan or Hansen's $J$ test.
