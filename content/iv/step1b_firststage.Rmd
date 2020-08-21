@@ -6,12 +6,14 @@ output:
     toc: TRUE
     toc_float: TRUE
     toc_depth: 3
-bibliography: 'D:/CloudStation/Professional/Bibliography/BibTeX_Library.bib'
+bibliography: '../../BibTeX_Library.bib'
 math: true
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(googledrive)
+drive_download("Bibliography/BibTeX_Library.bib", overwrite=TRUE, path='../../BibTeX_Library.bib')
 ```
 
 What do we do if we have weak instruments? 
