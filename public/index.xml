@@ -59,56 +59,17 @@
       <link>/endog/flowchart/</link>
       <pubDate>Fri, 21 Aug 2020 00:00:00 +0000</pubDate>
       <guid>/endog/flowchart/</guid>
-      <description>&lt;p&gt;Most of the nodes in the diagram below are clickable, which will take you to another page with much more detail on that specific issue. In practice, empirical work is not so linear, and there is typically a lot of recirculation among these steps. For example, you may have 2 endogenous variables and 4 instruments. You may find that 1 or 2 of those instruments are weak, and as you learn this information, you are constantly recirculating in stage 1. You may settle on 3 instruments that seem to work well. Then, in Stage 2, you may find that your results are very sensitive with those instruments, but less sensitive when relying on only 2 of those 3 instruments. So now you go back to step 1, evaluate just those 2 instruments, etc.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://media.giphy.com/media/l0IylOPCNkiqOgMyA/giphy.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;The point is that empirical work in practice is messy. Ideally, we could set out our plan in advance and proceed accordingly, but there are some things we just can&amp;rsquo;t know until we see the data. All we can do is work through the process in good faith, assessing the quality of our empirical work based on sound statistics and econometrics.&lt;/p&gt;
-&lt;p&gt;One final note. If you&amp;rsquo;re accessing this on an android mobile device, the flowcharts are going to look a little odd (probably huge). This is a known issue in rendering these types of diagrams. See this closed 
+      <description>&lt;p&gt;Most of the nodes in the diagram below are clickable, which will take you to another page with much more detail on that specific issue. If you&amp;rsquo;re accessing this on an android mobile device, the flowcharts are going to look a little odd (probably huge). This is a known issue in rendering these types of diagrams. See this closed 
 &lt;a href=&#34;https://github.com/mermaid-js/mermaid/issues/816&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;issue on GitHub&lt;/a&gt; and these unanswered 
-&lt;a href=&#34;https://stackoverflow.com/search?q=%5Bmermaid%5D&amp;#43;chrome&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;posts on StackOverflow&lt;/a&gt;. If anyone has any suggestions for how to have this render on an android mobile browser, please let me know. Otherwise, happy instrumenting!&lt;/p&gt;
+&lt;a href=&#34;https://stackoverflow.com/search?q=%5Bmermaid%5D&amp;#43;chrome&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;posts on StackOverflow&lt;/a&gt;. If anyone has any suggestions for how to have this render on an android mobile browser, please let me know. Otherwise, good luck!&lt;/p&gt;
 &lt;div class=&#34;mermaid&#34;&gt;
 graph TD;
     linkStyle default interpolate basis
-    A([&#34;Thinking of IV?&#34;]) --&gt; B([&#34;How big is&lt;br&gt; the problem?&#34;])
-    B --&gt; |&#34;it&#39;s big&#34;| C1([&#34;Are your instruments&lt;br&gt; any good?&#34;])
-    B --&gt; |&#34;no biggie&#34;| C2([&#34;Nevermind:&lt;br&gt; try something else&#34;])
-    subgraph one [&#34;Stage 1: Requirements for any IV&#34;]
-    C1 --&gt; D1([&#34;first-stage&#34;])
-    C1 --&gt; D2([&#34;exogeneity&#34;])
-    C1 --&gt; D3([&#34;exclusion&#34;])
-    D1 --&gt; E([&#34;assess instruments&#34;])
-    D2 --&gt; E
-    D3 --&gt; E
-    end
-    subgraph two [&#34;Stage 1b: Something is better than nothing&#34;]
-    E --&gt; |&#34;kind of ok&#34;| e1([&#34;Some violations&#34;])
-    e1 --&gt; f1([&#34;first-stage&#34;])
-    e1 --&gt; f2([&#34;exogeneity/exclusion&#34;])
-    f1 --&gt; g([&#34;pick something&#34;])
-    f2 --&gt; g
-    end
-    subgraph three [&#34;Stage 2: Still not in the clear&#34;]
-    E --&gt; |&#34;so far so good!&#34;| E1([&#34;How sensitive are&lt;br&gt; the results?&#34;])
-    g --&gt; E1
-    E1 --&gt; F1([&#34;IV is biased!&#34;])
-    E1 --&gt; F2([&#34;what about outliers?&#34;])
-    F1 --&gt; G([&#34;assess sensitivity&#34;])
-    F2 --&gt; G
-    end
-    E --&gt; |&#34;ouch, no bueno&#34;| C2
-    G --&gt; |&#34;um, define sensitive&#34;| C2
-    G --&gt; |&#34;not too bad!&#34;| H([&#34;What am I&lt;br&gt; estimating, again?&#34;])
-    H --&gt; |&#34;can I be done?&#34;| I([&#34;Go forth and write&lt;br&gt; that appendix!&#34;])
-    click B &#34;/iv/problem&#34; &#34;Pre-testing&#34;
-    click C1 &#34;/iv/step1_overall&#34; &#34;Stage 1&#34;
-    click D1 &#34;/iv/step1_firststage&#34; &#34;Testing the first stage&#34;
-    click D2 &#34;/iv/step1_exog&#34; &#34;Testing the exogeneity assumption&#34;
-    click D3 &#34;/iv/step1_exclude&#34; &#34;Testing the exclusion assumption&#34;
-    click E &#34;/iv/step1_assess&#34; &#34;Assessing your instrument tests&#34;
-    click e1 &#34;/iv/step1b_overall&#34; &#34;IVs are OK, but not great&#34;
-    click f1 &#34;/iv/step1b_firststage&#34; &#34;Weak IV Robust Inference&#34;
-    click f2 &#34;/iv/step1b_exog_excl&#34; &#34;Invalid IVs&#34;
-    click C2 &#34;/&#34; &#34;Try something else&#34;
-    click I &#34;https://davidcard.berkeley.edu/papers/card-dellavigna-pagelimits.pdf&#34; &#34;Page limits are non-binding.&#34;
+    A([&#34;How big is&lt;br&gt; the problem?&#34;]) --&gt; |&#34;it&#39;s big&#34;| B1[(&#34;Don&#39;t give up yet!&#34;)]
+    A --&gt; |&#34;no biggie&#34;| B2([&#34;Proceed with caution&#34;])
+    B1 --&gt; C1([&#34;Impose assumptions&#34;])
+    B1 --&gt; C2([&#34;Bounded effects&#34;])
+    click A &#34;/endog/problem&#34; &#34;Pre-testing&#34;
 &lt;/div&gt;
 </description>
     </item>
@@ -323,20 +284,17 @@ graph TD;
     
     <item>
       <title>How big is the problem?</title>
-      <link>/iv/problem/</link>
+      <link>/endog/problem/</link>
       <pubDate>Mon, 03 Aug 2020 00:00:00 +0000</pubDate>
-      <guid>/iv/problem/</guid>
+      <guid>/endog/problem/</guid>
       <description>
 &lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
 
-&lt;p&gt;It would be great if we could test for whether we need IV or not. But unfortunately, I’ve already oversold this section. There is no magic “test” for whether you need IV.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://media.giphy.com/media/oXB0K4oFw3fck/giphy.gif&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;But all is not lost. There are a couple of things that we can try. While these approaches won’t definitively point us to IV, they will at least inform us as to the extent of the potential endogeneity problem and tell us how different some IV results might be relative to OLS (assuming we have some decent instruments already).&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://media.giphy.com/media/ZExucn4EDMUtX0p9dt/giphy.gif&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;It would be great if we could test for whether we really had an endogeneity problem or not. But alas, that’s just not in the cards. Instead, a good starting point is just to see “how much” of endogeneity problem we’d have to have to overturn our current results.&lt;/p&gt;
 &lt;div id=&#34;coefficient-stability&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Coefficient Stability&lt;/h2&gt;
-&lt;p&gt;A good first step is to quantify just how bad the endogeneity problem would need to be in order to negate your initial findings (say, from good ol’ OLS). &lt;span class=&#34;citation&#34;&gt;Oster (2019)&lt;/span&gt; can help us here. Here’s the idea…&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;citation&#34;&gt;Oster (2019)&lt;/span&gt; can help us here. Here’s the idea…&lt;/p&gt;
 &lt;p&gt;Lots of applied researchers assess “coefficient stability” by including different sets of control variables that are intended to proxy for some potentially important unobserved factor. This is not informative of omitted variables bias if the existing controls already do a very poor job of explaining the outcome. As Prof. Oster notes, “Omitted variable bias is proportional to coefficient movements, but only if such movements are scaled by the change in R-squared when controls are included.”&lt;/p&gt;
 &lt;p&gt;Extending the work of &lt;span class=&#34;citation&#34;&gt;Altonji, Elder, and Taber (2005)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Oster (2019)&lt;/span&gt; lays out a scenario in which we can fully decompose our outcome of interest into a treatment effect (denoted &lt;span class=&#34;math inline&#34;&gt;\(\beta\)&lt;/span&gt;), observed controls (denoted by &lt;span class=&#34;math inline&#34;&gt;\(W_{1}\)&lt;/span&gt;), unobserved controls (denoted by &lt;span class=&#34;math inline&#34;&gt;\(W_{2}\)&lt;/span&gt;), and some iid error term. Denote by &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; the treatment variable, such that &lt;span class=&#34;math display&#34;&gt;\[Y = \beta X + W_{1} + W_{2} + \epsilon.\]&lt;/span&gt; We then need to consider values (or a range of values) for two key objects.&lt;/p&gt;
 &lt;ol style=&#34;list-style-type: decimal&#34;&gt;
@@ -355,8 +313,33 @@ where &lt;span class=&#34;math inline&#34;&gt;\(\nu_{1}\)&lt;/span&gt;, &lt;span
 &lt;p&gt;So what do we gain from all of this? Well, &lt;span class=&#34;citation&#34;&gt;Oster (2019)&lt;/span&gt; shows that we can also work backwards and find the value of &lt;span class=&#34;math inline&#34;&gt;\(\delta\)&lt;/span&gt; such that &lt;span class=&#34;math inline&#34;&gt;\(\beta=0\)&lt;/span&gt;. In other words, say we estimate using OLS some effect, &lt;span class=&#34;math inline&#34;&gt;\(\hat{\beta}_{X, W_{1}}\)&lt;/span&gt;. How big must the role of selection on unobservables be in order to completely overpower our estimate such that the true effect is actually 0?&lt;/p&gt;
 &lt;p&gt;Another approach is to consider a range of &lt;span class=&#34;math inline&#34;&gt;\(R^{2}_{max}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\delta\)&lt;/span&gt; to bound the estimated treatment effect. Using &lt;span class=&#34;math inline&#34;&gt;\(\delta=1\)&lt;/span&gt; as an upper bound for &lt;span class=&#34;math inline&#34;&gt;\(\delta\)&lt;/span&gt; (i.e., observables are at least as important as the unobservables), and &lt;span class=&#34;math inline&#34;&gt;\(\bar{R}^{2}_{max}\)&lt;/span&gt; as an upper bound for &lt;span class=&#34;math inline&#34;&gt;\(R^{2}_{max}\)&lt;/span&gt;, then the bounds on &lt;span class=&#34;math inline&#34;&gt;\(\beta^{*}\)&lt;/span&gt; are &lt;span class=&#34;math inline&#34;&gt;\(\left[ \hat{\beta}_{X,W_{1}}, \beta^{*}(\bar{R}^{2}_{max}, 1) \right]\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;Finally, &lt;span class=&#34;citation&#34;&gt;Oster (2019)&lt;/span&gt; suggests setting &lt;span class=&#34;math inline&#34;&gt;\(\delta=1\)&lt;/span&gt; and identifying the value of &lt;span class=&#34;math inline&#34;&gt;\(R^{2}_{max}\)&lt;/span&gt; for which &lt;span class=&#34;math inline&#34;&gt;\(\beta=0\)&lt;/span&gt;. This would tell us how much of the variation in &lt;span class=&#34;math inline&#34;&gt;\(Y\)&lt;/span&gt; would need to be explained by unobservables in order for the true effect to be null (given our estimate, &lt;span class=&#34;math inline&#34;&gt;\(\hat{\beta}_{X,W_{1}}\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;There is also a Stata command, &lt;code&gt;psacalc&lt;/code&gt;, to do these calculations for us!&lt;/p&gt;
+&lt;p&gt;There is also a Stata command, &lt;code&gt;psacalc&lt;/code&gt;, to do these calculations for us!&lt;br /&gt;
+# References&lt;/p&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references hanging-indent&#34;&gt;
+&lt;div id=&#34;ref-altonji2005&#34;&gt;
+&lt;p&gt;Altonji, Joseph G, Todd E Elder, and Christopher R Taber. 2005. “An Evaluation of Instrumental Variable Strategies for Estimating the Effects of Catholic Schooling.” &lt;em&gt;Journal of Human Resources&lt;/em&gt; 40 (4): 791–821.&lt;/p&gt;
 &lt;/div&gt;
+&lt;div id=&#34;ref-oster2019&#34;&gt;
+&lt;p&gt;Oster, Emily. 2019. “Unobservable Selection and Coefficient Stability: Theory and Evidence.” &lt;em&gt;Journal of Business &amp;amp; Economic Statistics&lt;/em&gt; 37 (2): 187–204. &lt;a href=&#34;https://doi.org/10.1080/07350015.2016.1227711&#34;&gt;https://doi.org/10.1080/07350015.2016.1227711&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How big is the problem?</title>
+      <link>/iv/problem/</link>
+      <pubDate>Mon, 03 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>/iv/problem/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;It would be great if we could test for whether we need IV or not. But unfortunately, I’ve already oversold this section. There is no magic “test” for whether you need IV.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://media.giphy.com/media/oXB0K4oFw3fck/giphy.gif&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;But all is not lost. Even though we can’t definitively say that we &lt;em&gt;need&lt;/em&gt; to use IV we can at least see different some IV results might be relative to OLS (assuming we have some decent instruments already).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://media.giphy.com/media/ZExucn4EDMUtX0p9dt/giphy.gif&#34; /&gt;&lt;/p&gt;
 &lt;div id=&#34;iv-vs-ols&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;IV vs OLS&lt;/h2&gt;
 &lt;p&gt;An easy way to assess the need for IV is to simply test whether your IV results are sufficiently different from OLS. That’s the spirit of the Hausman test. The original test introduced in &lt;span class=&#34;citation&#34;&gt;Hausman (1978)&lt;/span&gt; is not specific to endogeneity…it’s a more general misspecification test, comparing the estimates from one estimator (that is efficient under the null) to that of another estimator that is consistent but inefficient under the null. The test in the context of IV is also referred to as the Durbin-Wu-Hausman test, due to the series of papers pre-dating &lt;span class=&#34;citation&#34;&gt;Hausman (1978)&lt;/span&gt;, including &lt;span class=&#34;citation&#34;&gt;Durbin (1954)&lt;/span&gt;, &lt;span class=&#34;citation&#34;&gt;Wu (1973)&lt;/span&gt;, and &lt;span class=&#34;citation&#34;&gt;Wu (1974)&lt;/span&gt;.&lt;/p&gt;
@@ -367,17 +350,11 @@ where &lt;span class=&#34;math inline&#34;&gt;\(\nu_{1}\)&lt;/span&gt;, &lt;span
 &lt;div id=&#34;references&#34; class=&#34;section level1 unnumbered&#34;&gt;
 &lt;h1&gt;References&lt;/h1&gt;
 &lt;div id=&#34;refs&#34; class=&#34;references hanging-indent&#34;&gt;
-&lt;div id=&#34;ref-altonji2005&#34;&gt;
-&lt;p&gt;Altonji, Joseph G, Todd E Elder, and Christopher R Taber. 2005. “An Evaluation of Instrumental Variable Strategies for Estimating the Effects of Catholic Schooling.” &lt;em&gt;Journal of Human Resources&lt;/em&gt; 40 (4): 791–821.&lt;/p&gt;
-&lt;/div&gt;
 &lt;div id=&#34;ref-durbin1954&#34;&gt;
 &lt;p&gt;Durbin, James. 1954. “Errors in Variables.” &lt;em&gt;Revue de L’institut International de Statistique&lt;/em&gt;, 23–32.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;ref-hausman1978&#34;&gt;
 &lt;p&gt;Hausman, Jerry A. 1978. “Specification Tests in Econometrics.” &lt;em&gt;Econometrica: Journal of the Econometric Society&lt;/em&gt;, 1251–71.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;ref-oster2019&#34;&gt;
-&lt;p&gt;Oster, Emily. 2019. “Unobservable Selection and Coefficient Stability: Theory and Evidence.” &lt;em&gt;Journal of Business &amp;amp; Economic Statistics&lt;/em&gt; 37 (2): 187–204. &lt;a href=&#34;https://doi.org/10.1080/07350015.2016.1227711&#34;&gt;https://doi.org/10.1080/07350015.2016.1227711&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;ref-wu1973&#34;&gt;
 &lt;p&gt;Wu, De-Min. 1973. “Alternative Tests of Independence Between Stochastic Regressors and Disturbances.” &lt;em&gt;Econometrica: Journal of the Econometric Society&lt;/em&gt;, 733–50.&lt;/p&gt;
@@ -471,9 +448,9 @@ where &lt;span class=&#34;math inline&#34;&gt;\(\nu_{1}\)&lt;/span&gt;, &lt;span
 &lt;div class=&#34;mermaid&#34;&gt;
 graph TD;
     linkStyle default interpolate basis
-    A([&#34;Thinking of IV?&#34;]) --&gt; B([&#34;How big is&lt;br&gt; the problem?&#34;])
-    B --&gt; |&#34;it&#39;s big&#34;| C1([&#34;Are your instruments&lt;br&gt; any good?&#34;])
-    B --&gt; |&#34;no biggie&#34;| C2([&#34;Nevermind:&lt;br&gt; try something else&#34;])
+    A([&#34;Thinking of IV?&#34;]) --&gt; B([&#34;Does it really matter?&#34;])
+    B --&gt; |&#34;yes!&#34;| C1([&#34;Are your instruments&lt;br&gt; any good?&#34;])
+    B --&gt; |&#34;I guess not&#34;| C2([&#34;Nevermind:&lt;br&gt; try something else&#34;])
     subgraph one [&#34;Stage 1: Requirements for any IV&#34;]
     C1 --&gt; D1([&#34;first-stage&#34;])
     C1 --&gt; D2([&#34;exogeneity&#34;])
