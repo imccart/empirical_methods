@@ -16,13 +16,9 @@ library(googledrive)
 drive_download("Bibliography/BibTeX_Library.bib", overwrite=TRUE, path='../../BibTeX_Library.bib')
 ```
 
-It would be great if we could test for whether we really had an endogeneity problem or not. But alas, that's just not in the cards. Instead, a good starting point is just to see "how much" of endogeneity problem we'd have to have to overturn our current results.
+It would be great if we could test for whether we really had an endogeneity problem or not. But alas, that's just not in the cards. Instead, a good starting point is to see "how much" of an endogeneity problem we'd have to have to overturn our current results.
 
-## Coefficient Stability 
-
-@oster2019 can help us here. Here's the idea...
-
-Lots of applied researchers assess "coefficient stability" by including different sets of control variables that are intended to proxy for some potentially important unobserved factor. This is not informative of omitted variables bias if the existing controls already do a very poor job of explaining the outcome. As Prof. Oster notes, "Omitted variable bias is proportional to coefficient movements, but only if such movements are scaled by the change in R-squared when controls are included."
+@oster2019 can help us here. Here's the idea. Lots of applied researchers assess "coefficient stability" by including different sets of control variables that are intended to proxy for some potentially important unobserved factor. This is not informative of omitted variables bias if the existing controls already do a very poor job of explaining the outcome. As Prof. Oster notes, "Omitted variable bias is proportional to coefficient movements, but only if such movements are scaled by the change in R-squared when controls are included."
 
 Extending the work of @altonji2005, @oster2019 lays out a scenario in which we can fully decompose our outcome of interest into a treatment effect (denoted $\beta$), observed controls (denoted by $W_{1}$), unobserved controls (denoted by $W_{2}$), and some iid error term. Denote by $X$ the treatment variable, such that $$Y = \beta X + W_{1} + W_{2} + \epsilon.$$ We then need to consider values (or a range of values) for two key objects. 
 

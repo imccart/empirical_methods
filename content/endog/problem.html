@@ -13,11 +13,8 @@ math: true
 <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
-<p>It would be great if we could test for whether we really had an endogeneity problem or not. But alas, that’s just not in the cards. Instead, a good starting point is just to see “how much” of endogeneity problem we’d have to have to overturn our current results.</p>
-<div id="coefficient-stability" class="section level2">
-<h2>Coefficient Stability</h2>
-<p><span class="citation">Oster (2019)</span> can help us here. Here’s the idea…</p>
-<p>Lots of applied researchers assess “coefficient stability” by including different sets of control variables that are intended to proxy for some potentially important unobserved factor. This is not informative of omitted variables bias if the existing controls already do a very poor job of explaining the outcome. As Prof. Oster notes, “Omitted variable bias is proportional to coefficient movements, but only if such movements are scaled by the change in R-squared when controls are included.”</p>
+<p>It would be great if we could test for whether we really had an endogeneity problem or not. But alas, that’s just not in the cards. Instead, a good starting point is to see “how much” of an endogeneity problem we’d have to have to overturn our current results.</p>
+<p><span class="citation">Oster (2019)</span> can help us here. Here’s the idea. Lots of applied researchers assess “coefficient stability” by including different sets of control variables that are intended to proxy for some potentially important unobserved factor. This is not informative of omitted variables bias if the existing controls already do a very poor job of explaining the outcome. As Prof. Oster notes, “Omitted variable bias is proportional to coefficient movements, but only if such movements are scaled by the change in R-squared when controls are included.”</p>
 <p>Extending the work of <span class="citation">Altonji, Elder, and Taber (2005)</span>, <span class="citation">Oster (2019)</span> lays out a scenario in which we can fully decompose our outcome of interest into a treatment effect (denoted <span class="math inline">\(\beta\)</span>), observed controls (denoted by <span class="math inline">\(W_{1}\)</span>), unobserved controls (denoted by <span class="math inline">\(W_{2}\)</span>), and some iid error term. Denote by <span class="math inline">\(X\)</span> the treatment variable, such that <span class="math display">\[Y = \beta X + W_{1} + W_{2} + \epsilon.\]</span> We then need to consider values (or a range of values) for two key objects.</p>
 <ol style="list-style-type: decimal">
 <li><p>What is the maximum <span class="math inline">\(R^2\)</span> value we could obtain if we observed <span class="math inline">\(W_{2}\)</span>? Let’s call this <span class="math inline">\(R_{\text{max}}^{2}\)</span>. If we think the outcome is fully deterministic if we were to observe all relevant variables, then <span class="math inline">\(R_{\text{max}}^{2}=1\)</span>, but we could consider smaller values as well.</p></li>
@@ -43,6 +40,5 @@ where <span class="math inline">\(\nu_{1}\)</span>, <span class="math inline">\(
 </div>
 <div id="ref-oster2019">
 <p>Oster, Emily. 2019. “Unobservable Selection and Coefficient Stability: Theory and Evidence.” <em>Journal of Business &amp; Economic Statistics</em> 37 (2): 187–204. <a href="https://doi.org/10.1080/07350015.2016.1227711">https://doi.org/10.1080/07350015.2016.1227711</a>.</p>
-</div>
 </div>
 </div>
