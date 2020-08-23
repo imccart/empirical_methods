@@ -12,7 +12,7 @@ Most of the nodes in the diagram below are clickable, which will take you to ano
 {{< diagram >}}
 graph TD;
     linkStyle default interpolate basis
-    A(["How big is<br> the problem?"]) --> |"it's big"| B1
+    A(["How big is<br> the problem?"]) --> |"it's big"| B1[("Don't give up yet!")]
     A --> |"no biggie"| B2(["Proceed with caution"])
     B1 --> C1(["Impose assumptions"])
     B1 --> C2(["Bounded effects"])

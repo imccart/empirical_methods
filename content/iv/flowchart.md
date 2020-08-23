@@ -19,42 +19,46 @@ One final note. If you're accessing this on an android mobile device, the flowch
 {{< diagram >}}
 graph TD;
     linkStyle default interpolate basis
+    A(["Thinking of IV?"]) --> B(["Does it really matter?"])
+    B --> |"yes!"| C1(["Are your instruments<br> any good?"])
+    B --> |"I guess not"| C2(["Nevermind:<br> try something else"])
     subgraph one ["Stage 1: Requirements for any IV"]
-    A(["Are your instruments<br> any good?"]) --> B1(["first-stage"])
-    A --> B2(["exogeneity"])
-    A --> B3(["exclusion"])
-    B1 --> C(["assess instruments"])
-    B2 --> C
-    B3 --> C
+    C1 --> D1(["first-stage"])
+    C1 --> D2(["exogeneity"])
+    C1 --> D3(["exclusion"])
+    D1 --> E(["assess instruments"])
+    D2 --> E
+    D3 --> E
     end
     subgraph two ["Stage 1b: Something is better than nothing"]
-    C --> |"kind of ok"| d1(["Some violations"])
-    d1 --> e1(["first-stage"])
-    d1 --> e2(["exogeneity/exclusion"])
-    e1 --> f(["pick something"])
-    e2 --> f
+    E --> |"kind of ok"| e1(["Some violations"])
+    e1 --> f1(["first-stage"])
+    e1 --> f2(["exogeneity/exclusion"])
+    f1 --> g(["pick something"])
+    f2 --> g
     end
     subgraph three ["Stage 2: Still not in the clear"]
-    C --> |"so far so good!"| D1(["How sensitive are<br> the results?"])
-    f --> D1
-    D1 --> E1(["IV is biased!"])
-    D1 --> E2(["what about outliers?"])
-    E1 --> F(["assess sensitivity"])
-    E2 --> F
+    E --> |"so far so good!"| E1(["How sensitive are<br> the results?"])
+    g --> E1
+    E1 --> F1(["IV is biased!"])
+    E1 --> F2(["what about outliers?"])
+    F1 --> G(["assess sensitivity"])
+    F2 --> G
     end
-    C --> |"ouch, no bueno"| C2(["Nevermind:<br> Try something else"])
-    F --> |"um, define sensitive"| C2
-    F --> |"not too bad!"| G(["What am I<br> estimating, again?"])
-    G --> |"can I be done?"| H(["Go forth and write<br> that appendix!"])
-    click A "/iv/step1_overall" "Stage 1"
-    click B1 "/iv/step1_firststage" "Testing the first stage"
-    click B2 "/iv/step1_exog" "Testing the exogeneity assumption"
-    click B3 "/iv/step1_exclude" "Testing the exclusion assumption"
-    click C "/iv/step1_assess" "Assessing your instrument tests"
-    click d1 "/iv/step1b_overall" "IVs are OK, but not great"
-    click e1 "/iv/step1b_firststage" "Weak IV Robust Inference"
-    click e2 "/iv/step1b_exog_excl" "Invalid IVs"
+    E --> |"ouch, no bueno"| C2
+    G --> |"um, define sensitive"| C2
+    G --> |"not too bad!"| H(["What am I<br> estimating, again?"])
+    H --> |"can I be done?"| I(["Go forth and write<br> that appendix!"])
+    click B "/iv/problem" "Pre-testing"
+    click C1 "/iv/step1_overall" "Stage 1"
+    click D1 "/iv/step1_firststage" "Testing the first stage"
+    click D2 "/iv/step1_exog" "Testing the exogeneity assumption"
+    click D3 "/iv/step1_exclude" "Testing the exclusion assumption"
+    click E "/iv/step1_assess" "Assessing your instrument tests"
+    click e1 "/iv/step1b_overall" "IVs are OK, but not great"
+    click f1 "/iv/step1b_firststage" "Weak IV Robust Inference"
+    click f2 "/iv/step1b_exog_excl" "Invalid IVs"
     click C2 "/" "Try something else"
-    click H "https://davidcard.berkeley.edu/papers/card-dellavigna-pagelimits.pdf" "Page limits are non-binding."
+    click I "https://davidcard.berkeley.edu/papers/card-dellavigna-pagelimits.pdf" "Page limits are non-binding."
 {{< /diagram >}}
 
