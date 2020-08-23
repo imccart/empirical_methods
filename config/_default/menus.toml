@@ -4,21 +4,26 @@
 #   The weight parameter defines the order that the links will appear in.
 
 [[main]]
+  name = "endogeneity"
+  url = "#endog"
+  weight = 20
+
+[[main]]
   name = "instrumental variables"
   url = "#iv"
-  weight = 10
+  weight = 20
 
 [[main]]
   name = "difference-in-differences"
   url = "#dd"
-  weight = 20
+  weight = 30
 
 [[main]]
   name = "regression discontinuity"
   url = "#rd"
-  weight = 30
+  weight = 40
 
 [[main]]
   name = "clustering"
   url = "#cluster"
-  weight = 40
+  weight = 50

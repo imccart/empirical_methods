@@ -1,0 +1,832 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+    
+  
+  <meta name="description" content="The “first stage” is just a common term for a regression of the endogenous variable, \(x\), on your instrument, \(z\) (and any other exogenous variables). If you have more than one endogeous variable, then you will have more than one first stage, but all of your instruments should be in each of those regressions.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/iv/step1_firststage/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+    
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu868eca74f8a4177df052375a5d8f7185_1119_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu868eca74f8a4177df052375a5d8f7185_1119_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="/iv/step1_firststage/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="twitter:site" content="@ianhealthecon">
+  <meta property="twitter:creator" content="@ianhealthecon">
+  
+  <meta property="og:site_name" content="Navigating Empirical Microeconomics">
+  <meta property="og:url" content="/iv/step1_firststage/">
+  <meta property="og:title" content="Testing the First Stage | Navigating Empirical Microeconomics">
+  <meta property="og:description" content="The “first stage” is just a common term for a regression of the endogenous variable, \(x\), on your instrument, \(z\) (and any other exogenous variables). If you have more than one endogeous variable, then you will have more than one first stage, but all of your instruments should be in each of those regressions."><meta property="og:image" content="/images/icon_hu868eca74f8a4177df052375a5d8f7185_1119_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="/images/icon_hu868eca74f8a4177df052375a5d8f7185_1119_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2020-08-03T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2020-08-03T00:00:00&#43;00:00">
+  
+
+  
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Testing the First Stage | Navigating Empirical Microeconomics</title>
+
+</head>
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Navigating Empirical Microeconomics</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Navigating Empirical Microeconomics</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#endog"><span>endogeneity</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#iv"><span>instrumental variables</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#dd"><span>difference-in-differences</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#rd"><span>regression discontinuity</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#cluster"><span>clustering</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Testing the First Stage</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    August 3, 2020
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>The “first stage” is just a common term for a regression of the endogenous variable, <span class="math inline">\(x\)</span>, on your instrument, <span class="math inline">\(z\)</span> (and any other exogenous variables). If you have more than one endogeous variable, then you will have more than one first stage, but all of your instruments should be in each of those regressions. The intuition is simple, if you have a proposed instrument, it should at least be correlated with your endogenous variable of interest (after conditioning on all other exogenous variables already in the model). As with lots of econometrics, this sounds simple until it’s not. To preview some of this complexity, I’m only focusing on linear IV models here…the literature on non-linear IV models is less developed as far as I can tell.</p>
+<p><img src="https://media.giphy.com/media/14xS2Ey9TXH0Gs/giphy.gif" /></p>
+<div id="underidentification-versus-weak-instruments" class="section level2">
+<h2>Underidentification versus weak instruments</h2>
+<p>It is easy to confuse the question of underidentification versus weak instruments, but they are different issues. In the case of underidentification, we are explicitly interested in testing whether the partial correlation between the instrument(s) and the endogenous variable(s) is 0. In other words, is the instrument matrix of full rank? But it is possible to reject the null that the instruments and endogenous variables are uncorrelated, while still have very weak instruments. The literature therefore distinguishes between tests of 0 correlation versus tests that are robust to weak instruments (e.g., a test for which rejection of the null suggests that the instruments are sufficiently “strong”). Luckily, this distinction relates to the critical value to which you compare a given test statistic. In other words, a test of underidentification can use standard critical values, while a test allowing for weak instruments will tend to require slightly higher critical values (harder to reject).</p>
+</div>
+<div id="one-endogenous-variable" class="section level2">
+<h2>One endogenous variable</h2>
+<p>This is the simplest possible setup, and one in which you essentially focus on the significance (or, in the case of more than one instrument, joint significance) of your instruments in a regression of <span class="math inline">\(x\)</span> on <span class="math inline">\(z\)</span> and all other exogenous variables. A standard t-test or F-test using traditional critical values would be a test of underidentification.</p>
+<p>As is well-known, an F-stat of 10 is considered a decent rule-of-thumb for testing the first stage. This value was first proposed in <span class="citation">Staiger and Stock (1997)</span>, and it’s important because it’s larger than the standard critical values. The reason it’s larger is because the <span class="citation">Staiger and Stock (1997)</span> critical values allow for weak instruments. While the rule-of-thumb value of 10 is common and useful, the literature has probably taken this threshold a little too seriously (see Figure 1 in <span class="citation">Andrews, Stock, and Sun (2019)</span>, which shows a big spike at 10 in the empirical distribution of reported F-stats among papers published in the AER).</p>
+<p>Another popular first-stage assessment is the partial <span class="math inline">\(R^{2}\)</span>, sometimes called Shea’s Partial <span class="math inline">\(R^{2}\)</span> <span class="citation">(Shea 1997)</span>. This is the <span class="math inline">\(R^{2}\)</span> of a regression of our endogenous variable on the instruments after partialling out the other exogenous variables. In other words, we regress our endogenous variable on our instrument(s), and we regress each of the exogenous covariates on our instrument(s). We then take the residual from each of those regressions and run another regression of the residualized endogenous variable against the residualized instruments. The <span class="math inline">\(R^{2}\)</span> of that regression is the partial <span class="math inline">\(R^{2}\)</span> because the influence of the the other exogenous variables has been removed. If the partial <span class="math inline">\(R^{2}\)</span> is “low”, then we should suspect that our instruments are weak. The problem is that there is no clear value for “low” or “high”, and the distribution of this statistic is nonstandard. I suspect that, for this reason, Shea’s Partial <span class="math inline">\(R^{2}\)</span> is not a commonly-reported measure of instrument strength in most published work.</p>
+<p>Finally, <span class="citation">Olea and Pflueger (2013)</span> propose an “effective” F-stat that allows for heteroskedasticity. This hasn’t received much attention in the applied literature, but <span class="citation">Andrews, Stock, and Sun (2019)</span> encourages wider adoption of such a test. You can implement this in Stata with <code>weakivtest</code>. The effective F-stat is equivalent to a robust F-stat (i.e., the usual first-stage F-stat using robust standard errors) in the case of a single instrument. But with multiple instruments and one endogenous variable, the effective F-stat looks to be the best option for assessing the strength of your instruments.</p>
+</div>
+<div id="multiple-endogenous-variables" class="section level2">
+<h2>Multiple endogenous variables</h2>
+<p>With more than one endogenous variable, <span class="citation">Stock and Yogo (2005)</span> develops critical values based on the Cragg-Donald statistic <span class="citation">(Cragg and Donald 1993)</span>. A statistic similar to Cragg-Donald is the Anderson LM statistic, both of which are readily reported in Stata’s <code>ivreg2</code> command. Unfortunately, both statistics require the assumption of homoskedastic errors. Shea’s Partial <span class="math inline">\(R^{2}\)</span> also isn’t particularly informative in the case of multiple endogenous variables, again a potential reason for its limited use in practice.</p>
+<p>In the more realistic heteroskedastic setting, the appropriate tests are more complicated. The Kleibergen-Paap rank-based (<em>rk</em>) statistic can be used to implement a Lagrange-Multiplier (LM) test that is a robust version of the Cragg-Donald statistic <span class="citation">(Kleibergen and Paap 2006)</span>; however, the Kleibergen-Paap LM test is purely an “underidentification” test, and it is possible to reject the null while still having very weak correlation between your instruments and endogenous variables. For inference that is robust to weak instruments and heteroskedasticity, we can employ the Kleibergen-Paap <em>rk</em> Wald test with the critical values from <span class="citation">Stock and Yogo (2005)</span>. This is the approach recommended in <span class="citation">Baum, Schaffer, and Stillman (2007)</span>, although this approach is not formalized. The Kleibergen-Paap <em>rk</em> Wald statistics is also only recommended for just-identified models.</p>
+<p>Note that the Cragg-Donald statistic or the Kleibergen-Paap <em>rk</em> statistic each provide a single test statistic for all of the instruments and all of the endogenous variables. But what if you have more than one endogenous variable and just one of the IVs is predominatly driving the identification in all cases? In that case, it can be good to look at tests separately for each endogenous variable. <span class="citation">Angrist and Pischke (2009)</span> and <span class="citation">Sanderson and Windmeijer (2016)</span> provide such an approach.</p>
+<p>Ultimately, if you have more than one endogenous variables and the same number of instruments, then the Kleibergen-Paap <em>rk</em> Wald test with critical values from <span class="citation">Stock and Yogo (2005)</span> (or at least the rule-of-thumb critical value of 10) is the best option with heteroskedastic or clustered errors. I have not yet seen any tests for an overidentified model with more than one endogenous variable and heteroskedasticity. If you have such a model but feel strongly about including all of the instruments, then one approach would be to consider as a sensitivity analysis the just-identified version of your model with your subset of “best” instruments.</p>
+</div>
+<div id="references" class="section level1 unnumbered">
+<h1>References</h1>
+<div id="refs" class="references hanging-indent">
+<div id="ref-andrews2019">
+<p>Andrews, Isaiah, James H Stock, and Liyang Sun. 2019. “Weak Instruments in Instrumental Variables Regression: Theory and Practice.” <em>Annual Review of Economics</em> 11: 727–53.</p>
+</div>
+<div id="ref-angrist2009">
+<p>Angrist, J., and J. Pischke. 2009. <em>Mostly Harmless Econometrics</em>. Princeton, NJ: Princeton University Press.</p>
+</div>
+<div id="ref-baum2007">
+<p>Baum, Christopher F, Mark E Schaffer, and Steven Stillman. 2007. “Enhanced Routines for Instrumental Variables/Generalized Method of Moments Estimation and Testing.” <em>The Stata Journal</em> 7 (4): 465–506.</p>
+</div>
+<div id="ref-cragg1993">
+<p>Cragg, John G, and Stephen G Donald. 1993. “Testing Identifiability and Specification in Instrumental Variable Models.” <em>Econometric Theory</em>, 222–40.</p>
+</div>
+<div id="ref-kleibergen2006">
+<p>Kleibergen, Frank, and Richard Paap. 2006. “Generalized Reduced Rank Tests Using the Singular Value Decomposition.” <em>Journal of Econometrics</em> 133 (1): 97–126.</p>
+</div>
+<div id="ref-olea2013">
+<p>Olea, José Luis Montiel, and Carolin Pflueger. 2013. “A Robust Test for Weak Instruments.” <em>Journal of Business &amp; Economic Statistics</em> 31 (3): 358–69.</p>
+</div>
+<div id="ref-sanderson2016">
+<p>Sanderson, Eleanor, and Frank Windmeijer. 2016. “A Weak Instrument F-Test in Linear Iv Models with Multiple Endogenous Variables.” <em>Journal of Econometrics</em> 190 (2): 212–21.</p>
+</div>
+<div id="ref-shea1997">
+<p>Shea, John. 1997. “Instrument Relevance in Multivariate Linear Models: A Simple Measure.” <em>The Review of Economics and Statistics</em> 79 (2): 348–52.</p>
+</div>
+<div id="ref-staiger1997">
+<p>Staiger, Douglas, and James H Stock. 1997. “Instrumental Variables Regression with Weak Instruments.” <em>Econometrica</em> 65 (3): 557–86.</p>
+</div>
+<div id="ref-stock2005">
+<p>Stock, James H, and Motohiro Yogo. 2005. “Testing for Weak Instruments in Linear Iv Regression.” In <em>Identification and Inference for Econometric Models: Essays in Honor of Thomas Rothenberg</em>. Cambridge University Press.</p>
+</div>
+</div>
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    <script>const isSiteThemeDark = false;</script>
+    
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="/js/academic.min.cbb55fd8eafa574bce72dcb94f65cd2c.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    Published with
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic Website Builder</a>
+    
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

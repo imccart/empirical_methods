@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Endogs | Navigating Empirical Microeconomics</title>
+    <link>/endog/</link>
+      <atom:link href="/endog/index.xml" rel="self" type="application/rss+xml" />
+    <description>Endogs</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><lastBuildDate>Fri, 21 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hu868eca74f8a4177df052375a5d8f7185_1119_512x512_fill_lanczos_center_2.png</url>
+      <title>Endogs</title>
+      <link>/endog/</link>
+    </image>
+    
+    <item>
+      <title>Endogeneity Flowchart</title>
+      <link>/endog/flowchart/</link>
+      <pubDate>Fri, 21 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>/endog/flowchart/</guid>
+      <description>&lt;p&gt;Most of the nodes in the diagram below are clickable, which will take you to another page with much more detail on that specific issue. In practice, empirical work is not so linear, and there is typically a lot of recirculation among these steps. For example, you may have 2 endogenous variables and 4 instruments. You may find that 1 or 2 of those instruments are weak, and as you learn this information, you are constantly recirculating in stage 1. You may settle on 3 instruments that seem to work well. Then, in Stage 2, you may find that your results are very sensitive with those instruments, but less sensitive when relying on only 2 of those 3 instruments. So now you go back to step 1, evaluate just those 2 instruments, etc.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://media.giphy.com/media/l0IylOPCNkiqOgMyA/giphy.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The point is that empirical work in practice is messy. Ideally, we could set out our plan in advance and proceed accordingly, but there are some things we just can&amp;rsquo;t know until we see the data. All we can do is work through the process in good faith, assessing the quality of our empirical work based on sound statistics and econometrics.&lt;/p&gt;
+&lt;p&gt;One final note. If you&amp;rsquo;re accessing this on an android mobile device, the flowcharts are going to look a little odd (probably huge). This is a known issue in rendering these types of diagrams. See this closed 
+&lt;a href=&#34;https://github.com/mermaid-js/mermaid/issues/816&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;issue on GitHub&lt;/a&gt; and these unanswered 
+&lt;a href=&#34;https://stackoverflow.com/search?q=%5Bmermaid%5D&amp;#43;chrome&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;posts on StackOverflow&lt;/a&gt;. If anyone has any suggestions for how to have this render on an android mobile browser, please let me know. Otherwise, happy instrumenting!&lt;/p&gt;
+&lt;div class=&#34;mermaid&#34;&gt;
+graph TD;
+    linkStyle default interpolate basis
+    A([&#34;Thinking of IV?&#34;]) --&gt; B([&#34;How big is&lt;br&gt; the problem?&#34;])
+    B --&gt; |&#34;it&#39;s big&#34;| C1([&#34;Are your instruments&lt;br&gt; any good?&#34;])
+    B --&gt; |&#34;no biggie&#34;| C2([&#34;Nevermind:&lt;br&gt; try something else&#34;])
+    subgraph one [&#34;Stage 1: Requirements for any IV&#34;]
+    C1 --&gt; D1([&#34;first-stage&#34;])
+    C1 --&gt; D2([&#34;exogeneity&#34;])
+    C1 --&gt; D3([&#34;exclusion&#34;])
+    D1 --&gt; E([&#34;assess instruments&#34;])
+    D2 --&gt; E
+    D3 --&gt; E
+    end
+    subgraph two [&#34;Stage 1b: Something is better than nothing&#34;]
+    E --&gt; |&#34;kind of ok&#34;| e1([&#34;Some violations&#34;])
+    e1 --&gt; f1([&#34;first-stage&#34;])
+    e1 --&gt; f2([&#34;exogeneity/exclusion&#34;])
+    f1 --&gt; g([&#34;pick something&#34;])
+    f2 --&gt; g
+    end
+    subgraph three [&#34;Stage 2: Still not in the clear&#34;]
+    E --&gt; |&#34;so far so good!&#34;| E1([&#34;How sensitive are&lt;br&gt; the results?&#34;])
+    g --&gt; E1
+    E1 --&gt; F1([&#34;IV is biased!&#34;])
+    E1 --&gt; F2([&#34;what about outliers?&#34;])
+    F1 --&gt; G([&#34;assess sensitivity&#34;])
+    F2 --&gt; G
+    end
+    E --&gt; |&#34;ouch, no bueno&#34;| C2
+    G --&gt; |&#34;um, define sensitive&#34;| C2
+    G --&gt; |&#34;not too bad!&#34;| H([&#34;What am I&lt;br&gt; estimating, again?&#34;])
+    H --&gt; |&#34;can I be done?&#34;| I([&#34;Go forth and write&lt;br&gt; that appendix!&#34;])
+    click B &#34;/iv/problem&#34; &#34;Pre-testing&#34;
+    click C1 &#34;/iv/step1_overall&#34; &#34;Stage 1&#34;
+    click D1 &#34;/iv/step1_firststage&#34; &#34;Testing the first stage&#34;
+    click D2 &#34;/iv/step1_exog&#34; &#34;Testing the exogeneity assumption&#34;
+    click D3 &#34;/iv/step1_exclude&#34; &#34;Testing the exclusion assumption&#34;
+    click E &#34;/iv/step1_assess&#34; &#34;Assessing your instrument tests&#34;
+    click e1 &#34;/iv/step1b_overall&#34; &#34;IVs are OK, but not great&#34;
+    click f1 &#34;/iv/step1b_firststage&#34; &#34;Weak IV Robust Inference&#34;
+    click f2 &#34;/iv/step1b_exog_excl&#34; &#34;Invalid IVs&#34;
+    click C2 &#34;/&#34; &#34;Try something else&#34;
+    click I &#34;https://davidcard.berkeley.edu/papers/card-dellavigna-pagelimits.pdf&#34; &#34;Page limits are non-binding.&#34;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

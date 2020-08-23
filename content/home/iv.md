@@ -2,7 +2,7 @@
 widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 20  # Order that this section will appear.
+weight = 30  # Order that this section will appear.
 
 title = "Instrumental Variables"
 subtitle = ""
@@ -35,11 +35,11 @@ subtitle = ""
  css_class = ""
 +++
 
-So you think you have an endogeneity problem and want to solve it with IV? Well, IV comes with its own problems too. For one, it's biased (although that can be fixed with some assumptions). It's also a very sensitive approach. IV used to be the darling of empirical work, but not so much anymore. 
+Want to solve your endogeneity problem with with IV? Well, IV comes with its own problems too. For one, it's biased (although that can be fixed with some assumptions). It's also a very sensitive approach. IV used to be the darling of empirical work, but not so much anymore. 
 
 I'm assuming you have some instrument(s) in mind already, at least as many as you have endogenous variables. 
 
 <img src="https://media.giphy.com/media/fXtGlVSI2ZB2E1JO0b/giphy.gif#center" alt="neato">
 
-With those potential instruments in mind, here's the [IV interactive flowchart]({{<ref "/iv/flowchart" >}}).
+With those potential instruments in hand, here's the [IV interactive flowchart]({{<ref "/iv/flowchart" >}}).
 
