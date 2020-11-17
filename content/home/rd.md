@@ -35,10 +35,8 @@ subtitle = ""
  css_class = ""
 +++
 
-Witty comments about RD.  
-If you're still reading this, I assume your context has some sort of discontinuity you want to explore further.
+Interested in using RD? Well, you may be in luck.  RD's quasi-experimental design provides a compelling way to deal with that pesky endogeneity.  I'm assuming your setting has some sort of discontinuous treatment based on an observed underlying value.  
 
-<img src="https://media.giphy.com/media/fXtGlVSI2ZB2E1JO0b/giphy.gif#center" alt="neato">
+<img src="https://media.giphy.com/media/l0ErNdz1w5vt3YdZm/giphy.gif#center" alt="neato">
 
-Take a look, here's the [RD interactive flowchart]({{<ref "/rd/flowchart" >}}).
-
+Don't despair, here's the [RD interactive flowchart]({{<ref "/rd/flowchart" >}}) to see if RD is well-suited for your context.
