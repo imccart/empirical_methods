@@ -1,9 +1,12 @@
 ---
-title: Instrumental Variables Flowchart
+title: "Instrumental Variables Flowchart"
 date: '2020-07-30'
-diagram: true
-diagram_parallax: yes
+diagram: yes
+output:
+  html_document:
+    df_print: paged
 image_size: contain
+diagram_parallax: yes
 ---
 
 
