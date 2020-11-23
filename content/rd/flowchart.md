@@ -47,21 +47,24 @@ graph TD;
     
    click Leave "/" "Try something else"
    click F2 "/iv/problem"
-    click B "/rd/problem"
+   click B "/rd/problem"
+   click C "/rd/step1_overall"
+   click D1 "/rd/step1_rv"
+   click D2 "/rd/step1_manipulation"
+   click D3 "/rd/step1_covarbal"
+   click E "/rd/step1_evaluate"
+   click F1 "/rd/step1b_overview"
+   click G1 "/rd/step1b_one"
+   click G2 "/rd/step1b_mult"
+   click G3 "/rd/step1b_multrv"
+   click H "/rd/step2_overview"
+   click I1 "/rd/step2_graph"
+   click I2 "/rd/step2_bin"
+   click I3 "/rd/step2_specification"
+   click J "/rd/step2_sensitivity"
+
 {{< /diagram >}}
 
 <img src="https://media.giphy.com/media/3oKIPuBx0SDOhdISAw/giphy.gif#center" alt="neato">
 
-
-
-    # click B "/iv/problem" "Pre-testing"
-    # click C1 "/iv/step1_overall" "Stage 1"
-    # click D1 "/iv/step1_firststage" "Testing the first stage"
-    # click D2 "/iv/step1_exog" "Testing the exogeneity assumption"
-    # click D3 "/iv/step1_exclude" "Testing the exclusion assumption"
-    # click E "/iv/step1_assess" "Assessing your instrument tests"
-    # click e1 "/iv/step1b_overall" "IVs are OK, but not great"
-    # click f1 "/iv/step1b_firststage" "Weak IV Robust Inference"
-    # click f2 "/iv/step1b_exog_excl" "Invalid IVs"
-   
  

@@ -1,0 +1,13 @@
+---
+title: "How does it look so far?"
+date: '2020-11-20'
+output: 
+  blogdown::html_document2:
+    toc: TRUE
+    toc_float: TRUE
+    toc_depth: 3
+#bibliography: '../../BibTeX_Library.bib'
+math: true
+---
+
+talk about how to evaluate the results of the first step

@@ -1,0 +1,13 @@
+---
+title: "What about multiple running variables?"
+date: '2020-11-20'
+output: 
+  blogdown::html_document2:
+    toc: TRUE
+    toc_float: TRUE
+    toc_depth: 3
+#bibliography: '../../BibTeX_Library.bib'
+math: true
+---
+
+cite the work on how to handle multiple RVs
