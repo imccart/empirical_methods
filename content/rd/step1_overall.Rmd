@@ -10,7 +10,15 @@ output:
 math: true
 ---
 
-Kaylyn things to do: 
-set up connection to bib-tex file.
+So here you are, facing an endogeneity problem, a bit more familiar with RD, and thinking you might have a discontinuity that makes this methodology possible in your context. 
 
 
+<img src="https://media.giphy.com/media/dUHUUNXva8Be4HuYoz/giphy.gif#center" alt="neato">
+
+But wait, before you get too optimistic, you'll need to make sure you have the necessary components and investigate the underlying assumptions. Fortunately, there are tools and tests and your disposal! Click on the links below to get more detail on each part of this step, or go back to the [flowchart](/rd/flowchart).
+
+1. [Running Variable](/rd/step1_rv): Our running variable must be continuous and must determine assignment to treatment.
+
+2. [Manipulation](/rd/step1_manipulation): Our treatment status must not be manipulated.
+
+3. [Covariate Balance](/rd/step1_covarbal): The observations on either side of the cutoff must be comparable with the exception of treatment status.

@@ -6,9 +6,18 @@ output:
     toc: TRUE
     toc_float: TRUE
     toc_depth: 3
-#bibliography: '../../BibTeX_Library.bib'
+bibliography: '../../references-ks.bib'
 math: true
 ---
- write in information about manipulation
+
+Remember, RD relies on the idea that observations within a narrow bandwidth around the cutoff are similar with the exception of their treatment status. This premise is undermined if the individuals can manipulate the running variable, and subsequently, their assignment to treatment. This may be particularly problematic when the rule used to assign treatment is public knowledge.  To illustrate, consider @van2002 as discussed in @imbens2008.  The study addresses the effect of financial aid offers on student enrollment choices using discontinuities in the aid assignment rule.  @imbens2008 notes that if students know how their applications will be assessed, they may modify their application to improve their score.  To the extent that the students who alter their application are not random, this would result in a selected sample.  Further, if an admission offer rates the entirety of a student's application and knows the decision rule, this may affect the choice to rate the application above or below the cutoff. In this case, even though it's not the applicants that are causing the manipulation, the fact that the admissions officer can affect treatment undercuts the notion of random assignment. 
 
 
+<img src="https://media.giphy.com/media/2eTVRPLl4WgOrxY0kr/giphy.gif#center" alt="neato">
+
+But we're in luck! There are tests that we can perform to analyze the continuity of the running variable density function to rule out manipulation. One such test is proposed in @mccrary2008.  This test is essentially a Wald test of the null hypothesis that the discontinuity of the running variable at the cutoff is zero.  The test comprises two steps. The first creates a histogram of the running variable with narrow bins. The second step separately estimates a local linear regression on either side of the cutoff to smooth the histogram.  A discontinuity in the running variable at the cutoff indicates that manipulation is probable. As a practitioner, this test is easy to implement in both R and Stata, using the command `DCdensity` in either language. A recent development in this area is @cattaneo2020.  @cattaneo2020 is similar to @mccrary2008 in that it proposes a manipulation test, but in contrast to @mccrary2008, this new test does not require prebinning of the data and leverages local polynomial instead of local linear methods.  This newer test is also easy to implement in R and Stata using `rddensity` in either language.
+
+
+Both commands will produce the numerical results of the test along with the corresponding density plots.  While these tests are similar, given the ease of use, it is worthwhile to implement both.  As researchers, our role is to use the tools at our disposal to better understand the relationships we are investigating.  That said, the more evidence that we can present to build confidence and lend transparency in our analyses, the better. 
+
+# References 

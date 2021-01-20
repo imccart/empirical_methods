@@ -1,12 +1,12 @@
 ---
-title: Regression Discontinuity Flowchart
+title: "Regression Discontinuity Flowchart"
 date: '2020-11-17'
-diagram: true
+diagram: yes
 diagram_parallax: yes
 image_size: contain
 ---
 
-Most of the nodes in the diagram below are clickable, which will take you to another page with much more detail on that specific issue. Remember, in practice, empirical work is not as neat as this flowchart. 
+Most of the nodes in the diagram below are clickable, which will take you to another page with much more detail on that specific issue. Remember, in practice, empirical work is not as neat as this flowchart. You might find that your discontinuity isn't as clean as you had anticipated, maybe you have heterogeneous effects and need to use multiple cutoffs, or maybe you find that your working with a fuzzy discontinuity and you actually need to implement an IV estimator. That's totally fine.  Empirical work is messy, but by understanding and implementing sound statistical and econometric techniques, we can produce quality analyses. 
 
 
 If you're accessing this on an android mobile device, the flowcharts are going to look a little odd (probably huge). This is a known issue in rendering these types of diagrams. See this closed [issue on GitHub](https://github.com/mermaid-js/mermaid/issues/816) and these unanswered [posts on StackOverflow](https://stackoverflow.com/search?q=%5Bmermaid%5D+chrome). If anyone has any suggestions for how to have this render on an android mobile browser, please let me know. Otherwise, good luck!

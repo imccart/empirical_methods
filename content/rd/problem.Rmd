@@ -9,8 +9,20 @@ output:
 #bibliography: '../../BibTeX_Library.bib'
 math: true
 ---
+You're probably here because you have an endogeneity problem and you think your context has a discontinuity that can help. Great! But what exactly does that mean?  The intuition of the RD design is that observations that are similar based on some underlying measure, $x_i$ (referred to as the running variable), are assigned different treatment status based on being on either side of a specific cutoff ($c$). While the running variable may be associated with the outcome, $y_i$, the assumption is that the association is smooth, so any discontinuity in the outcome within a reasonably small bandwidth around the cutoff identifies the causal effect of being treated.  Mathematically, the basic RD specification is $y_i = \beta_1 (x_i - c) + \beta_2 \mathbf{1} (x_i-c>0) + \beta_3 (x_i - c)\times \mathbf{1} (x_i-c>0)  + \varepsilon_i$, which means that we are interested in $\beta_2$, the coefficient on the indicator for treatment. Arguably the most thorough yet accessible guide to RD is @imbens2008. 
 
-Kaylyn things to do: 
-set up connection to bib-tex file.
+&nbsp;
 
+
+Now, before you get too excited about the quasi-experimental power of RD, we need to be clear about some of the limitations.  The most notable is that RD identifies a *very* local effect. RD assumes that observations on either side of the cutoff are comparable with the exception of the treatment status. For that to be true, the characteristics of the observations on either side of the cutoff need to be similar, and the bandwidth around the cutoff must be relatively narrow. We'll discuss how to approach each of these features in [Step 1](/rd/step1_covarbal) and [Step 2](/rd/step2_bin).
+
+Another important concern that may invalidate the RD design is manipulation of treatment status.  If in practice, individuals can affect their treatment status then the treated group may be a selected sample, casting doubt on the idea that observations on either side of the cutoff are comparable with the exception of treatment. Fortunately, we can test for this, as we'll show in [Step 1](/rd/step1_manipulation).
+
+
+&nbsp;
+
+One final note: if you've made it this far, you're arguably quite interested in employing a regression discontinuity design.  In addition to working your way through the flowchart and the papers cited therein, you may want to watch [this seminar](https://www.chamberlainseminar.org/past-seminars/autumn-2020#h.41tsl12q6tcb) by Matias Cattaneo.  You'll see that he and his coauthors have made numerous contributions to this area and hearing him walk through the intuition and implementation of RD may be helpful. 
+
+
+# References
 

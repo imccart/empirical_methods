@@ -6,10 +6,13 @@ output:
     toc: TRUE
     toc_float: TRUE
     toc_depth: 3
-#bibliography: '../../BibTeX_Library.bib'
+bibliography: '../../references-ks.bib'
 math: true
 ---
 
 
 
-<p>write detail about covariate balance</p>
+<p>Up until this point, I’ve emphasized the local nature of RD, making a point to say that the observations on either side of the cutoff are comparable with the exception of their treatment status. So you might be wondering where covariates come into play, particularly considering the fact that the basic RD equation shown at the start of this whole endeavor didn’t even include any additional covariates. Well, in an RD setting, covariates can actually be quite useful in determining whether or not the assumption that the observations around the cutoff are comparable is valid.</p>
+<p>We test this by taking (standardized) mean differences between the covariates directly on either side of the cutoff. The <code>cobalt</code> package in R will make this straight forward to implement and produce plots of the covariate balance. The graphing component of the package is based on <code>ggplot2</code>, so those familiar with R will find it easy to customize. It is important to note that when you test for covariate balance, you are not implementing any sort of matching, but simply taking the mean difference across all covariates without imposing any weights. The common threshold used to determine whether the covariates are materially different is 0.1, i.e. a standardized mean difference greater than 0.1 may indicate that there are legitimate differences between the treated and non-treated observations.</p>
+<p>When implementing an RD design, you should both present your covariate balance and investigate any substantial mean differences. If you find that your covariates are unbalanced, don’t panic. Determine what might be driving those mean differences and see if there are reasonable limitations you can put on your data to achieve a subset that is in fact balanced. As always, be transparent about these choices.</p>
+<p><img src="https://media.giphy.com/media/XE67yXdk0GEcIe5qu5/giphy.gif#center" alt="neato"></p>

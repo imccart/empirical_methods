@@ -6,9 +6,10 @@ output:
     toc: TRUE
     toc_float: TRUE
     toc_depth: 3
-#bibliography: '../../BibTeX_Library.bib'
+bibliography: '../../references-ks.bib'
 math: true
 ---
 
-include info on the RV 
+The "running variable" is the measure that is the basis for treatment. 
 
+# References 
