@@ -10,7 +10,6 @@ bibliography: '../../BibTeX_Library.bib'
 math: true
 ---
 
-<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
 <p>It would be great if we could test for whether we really had an endogeneity problem or not. But alas, that’s just not in the cards. Instead, a good starting point is to see “how much” of an endogeneity problem we’d have to have to overturn our current results.</p>
@@ -34,7 +33,7 @@ where <span class="math inline">\(\nu_{1}\)</span>, <span class="math inline">\(
 <p>Finally, <span class="citation">Oster (2019)</span> suggests setting <span class="math inline">\(\delta=1\)</span> and identifying the value of <span class="math inline">\(R^{2}_{max}\)</span> for which <span class="math inline">\(\beta=0\)</span>. This would tell us how much of the variation in <span class="math inline">\(Y\)</span> would need to be explained by unobservables in order for the true effect to be null (given our estimate, <span class="math inline">\(\hat{\beta}_{X,W_{1}}\)</span>.</p>
 <p>There is also a Stata command, <code>psacalc</code>, to do these calculations for us!<br />
 # References</p>
-<div id="refs" class="references hanging-indent">
+<div id="refs" class="references">
 <div id="ref-altonji2005">
 <p>Altonji, Joseph G, Todd E Elder, and Christopher R Taber. 2005. “An Evaluation of Instrumental Variable Strategies for Estimating the Effects of Catholic Schooling.” <em>Journal of Human Resources</em> 40 (4): 791–821.</p>
 </div>
