@@ -6,18 +6,27 @@ output:
     toc: TRUE
     toc_float: TRUE
     toc_depth: 3
-#bibliography: '../../BibTeX_Library.bib'
+bibliography: '../../references-ks.bib'
 math: true
 ---
 
 
 
-<p>You’re probably here because you have an endogeneity problem and you think your context has a discontinuity that can help. Great! But what exactly does that mean? The intuition of the RD design is that observations that are similar based on some underlying measure, <span class="math inline">\(x_i\)</span> (referred to as the running variable), are assigned different treatment status based on being on either side of a specific cutoff (<span class="math inline">\(c\)</span>). While the running variable may be associated with the outcome, <span class="math inline">\(y_i\)</span>, the assumption is that the association is smooth, so any discontinuity in the outcome within a reasonably small bandwidth around the cutoff identifies the causal effect of being treated. Mathematically, the basic RD specification is <span class="math inline">\(y_i = \beta_1 (x_i - c) + \beta_2 \mathbf{1} (x_i-c&gt;0) + \beta_3 (x_i - c)\times \mathbf{1} (x_i-c&gt;0) + \varepsilon_i\)</span>, which means that we are interested in <span class="math inline">\(\beta_2\)</span>, the coefficient on the indicator for treatment. Arguably the most thorough yet accessible guide to RD is <span class="citation">@imbens2008</span>.</p>
-<p> </p>
+<p>You’re probably here because you have an endogeneity problem and you think your context has a discontinuity that can help. Great! But what exactly does that mean? The intuition of the RD design is that observations that are similar based on some underlying measure, <span class="math inline">\(x_i\)</span> (referred to as the running variable), are assigned different treatment statuses based on being on either side of a specific cutoff (<span class="math inline">\(c\)</span>). While the running variable may be associated with the outcome, <span class="math inline">\(y_i\)</span>, the assumption is that the association is smooth, so any discontinuity in the outcome within a reasonably small bandwidth around the cutoff identifies the causal effect of being treated. Mathematically, the basic RD specification is <span class="math inline">\(y_i = \beta_1 (x_i - c) + \beta_2 \mathbf{1} (x_i-c&gt;0) + \beta_3 (x_i - c)\times \mathbf{1} (x_i-c&gt;0) + \varepsilon_i\)</span>, which means that we are interested in <span class="math inline">\(\beta_2\)</span>, the coefficient on the indicator for treatment. A couple of the most through yet accessible guides to RD are <span class="citation">Imbens and Lemieux (2008)</span> and <span class="citation">Lee and Lemieux (2010)</span>.</p>
+<p>Recently, RD has become the new darling of empirical work because of experiment-like nature and the ability to test (instead of simply assuming) some features of the design. For these reasons, RD is potentially more credible than other causal inference methods <span class="citation">(Lee and Lemieux 2010)</span>.</p>
+<p><img src="https://media.giphy.com/media/cMJsqeSvw4nTx7YXRg/giphy.gif#center" alt="neato"></p>
 <p>Now, before you get too excited about the quasi-experimental power of RD, we need to be clear about some of the limitations. The most notable is that RD identifies a <em>very</em> local effect. RD assumes that observations on either side of the cutoff are comparable with the exception of the treatment status. For that to be true, the characteristics of the observations on either side of the cutoff need to be similar, and the bandwidth around the cutoff must be relatively narrow. We’ll discuss how to approach each of these features in <a href="/rd/step1_covarbal">Step 1</a> and <a href="/rd/step2_bin">Step 2</a>.</p>
 <p>Another important concern that may invalidate the RD design is manipulation of treatment status. If in practice, individuals can affect their treatment status then the treated group may be a selected sample, casting doubt on the idea that observations on either side of the cutoff are comparable with the exception of treatment. Fortunately, we can test for this, as we’ll show in <a href="/rd/step1_manipulation">Step 1</a>.</p>
 <p> </p>
 <p>One final note: if you’ve made it this far, you’re arguably quite interested in employing a regression discontinuity design. In addition to working your way through the flowchart and the papers cited therein, you may want to watch <a href="https://www.chamberlainseminar.org/past-seminars/autumn-2020#h.41tsl12q6tcb">this seminar</a> by Matias Cattaneo. You’ll see that he and his coauthors have made numerous contributions to this area and hearing him walk through the intuition and implementation of RD may be helpful.</p>
-<div id="references" class="section level1">
+<div id="references" class="section level1 unnumbered">
 <h1>References</h1>
+<div id="refs" class="references">
+<div id="ref-imbens2008">
+<p>Imbens, Guido W, and Thomas Lemieux. 2008. “Regression Discontinuity Designs: A Guide to Practice.” <em>Journal of Econometrics</em> 142 (2): 615–35.</p>
+</div>
+<div id="ref-lee2010">
+<p>Lee, David S, and Thomas Lemieux. 2010. “Regression Discontinuity Designs in Economics.” <em>Journal of Economic Literature</em> 48 (2): 281–355.</p>
+</div>
+</div>
 </div>

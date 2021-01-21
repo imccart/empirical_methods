@@ -10,12 +10,14 @@ output:
 math: true
 ---
 
-So here you are, facing an endogeneity problem, a bit more familiar with RD, and thinking you might have a discontinuity that makes this methodology possible in your context. 
+So here you are, facing an endogeneity problem, a bit more familiar with RD, and gearing up to use this methodology in your context.  But wait, while RD may seem like the sprinkle of econometric magic you're looking for, it's possible that it may just not be well-suited to your context. 
 
 
-<img src="https://media.giphy.com/media/dUHUUNXva8Be4HuYoz/giphy.gif#center" alt="neato">
+<img src="https://media.giphy.com/media/n4lK173IddTFe/giphy.gif#center" alt="neato">
 
-But wait, before you get too optimistic, you'll need to make sure you have the necessary components and investigate the underlying assumptions. Fortunately, there are tools and tests and your disposal! Click on the links below to get more detail on each part of this step, or go back to the [flowchart](/rd/flowchart).
+
+
+Fortunately, there are tools and tests that you can use to determine whether or not RD is appropriate! Click on the links below to get more detail on each part of this step, or go back to the [flowchart](/rd/flowchart).
 
 1. [Running Variable](/rd/step1_rv): Our running variable must be continuous and must determine assignment to treatment.
 

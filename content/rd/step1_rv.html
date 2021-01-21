@@ -1,6 +1,6 @@
 ---
 title: "Examining the running variable"
-date: '2020-11-20'
+date: '2021-01-20'
 output: 
   blogdown::html_document2:
     toc: TRUE
@@ -12,7 +12,7 @@ math: true
 
 
 
-<p>The “running variable” is the measure that is the basis for treatment.</p>
+<p>As described in <em>Mostly Harmless Econometrics</em> in a “rule-based world, some rules are arbitrary and therefore provide good experiments” <span class="citation">(<span class="citeproc-not-found" data-reference-id="angrist2009"><strong>???</strong></span>)</span>. This is the idea behind RD designs. To implement RD, you’ll need a covariate, <span class="math inline">\(x_i\)</span>, which we refer to as the “running variable.” You’ll also need some assigned treatment status that is a <em>discontinuous</em> function of the running variable. You’ll need to understand the specifics of your context to know whether or not you have this discontinuous function of the running variable. Examples of discontinuities in the wild include things like aid policies that require recipient to earn less than <span class="math inline">\(c%\)</span> of the poverty line or college admissions where applicants need a combined SAT score of <span class="math inline">\(c\)</span> or higher to be admitted. In either case, there is some smooth covariate (percent of the poverty line, SAT scores) and some cutoff where treatment is determined. Does this sound like your context? Can you identify your running variable and the treatment rule? If so, your context may be a good candidate for RD. If not, you’ll want to consider a different causal inference technique.</p>
 <div id="references" class="section level1">
 <h1>References</h1>
 </div>

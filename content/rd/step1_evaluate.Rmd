@@ -1,13 +1,26 @@
 ---
 title: "How does it look so far?"
-date: '2020-11-20'
+date: '2021-01-20'
 output: 
   blogdown::html_document2:
     toc: TRUE
     toc_float: TRUE
     toc_depth: 3
-#bibliography: '../../BibTeX_Library.bib'
+bibliography: '../../references-ks.bib'
 math: true
 ---
 
-talk about how to evaluate the results of the first step
+You've now assessed your running variable, the possibility of manipulation, and the balance of your covariates.  Part of this involves understanding your context: clearly identifying your running variable and assignment to treatment, considering whether or not the individuals in your context can exert precise or simply imprecise control over the covariate determining their treatment. The other part is looking at the tests: do your density tests support the notion of imprecise control? Are the covariates on either side of the threshold balanced? Optimally, you're able to respond positively to each of those ideas.  However, maybe you can't, and while there's no secret formula to make the tough calls for you, there are some problems you can address and some that are insurmountable. (Is that too dramatic?)
+
+&nbsp;
+
+Problems that have possible solutions are manipulation and covariate balance.  If it seems implausible that there is precise control over treatment in your context but you find evidence of manipulation in your density test, can you identify something mechanical that might be causing that result? This relates to covariate balance: if you find differences between observations on either side of the cutoff, can you limit your analysis to a subset of your data to resolve those differences? Does that fix the manipulation problem you find?  All of this is very context specific.  Any limitations you place on the covariates should be reasonable (and then ultimately well supported when you write).  If these approaches solve your problem, then you're almost ready to move on.  But first, you need to determine if you have a sharp or a fuzzy RD.  A "sharp" RD is where assignment to treatment (i.e. falling above the cutoff) perfectly predicts treatment receipt.  In other words, the probability of treatment jumps from 0 to 1 at the cutoff.  The "fuzzy" RD allows for imperfect compliance, and as such, has a jump of less than 1 in the probability of treatment at the cutoff.  As stated in @lee2010, "the difference between the 'sharp' and 'fuzzy' RD design is exactly parallel to the difference between the randomized experiment with perfect compliance and the case of imperfect compliance, when only the 'intent to treat' is randomized."  If you have a sharp RD, follow the flowchart to [Step 1B](/rd/step1b_overview).  If you have a fuzzy RD, you really don't have an RD at all, but rather an instrumental variable (IV).  Follow the flowchart, which will take you to the [IV section](/iv/problem), where you'll treat your treatment as an instrument. 
+
+&nbsp;
+
+On the other hand, an insurmountable problem is an intrinsic issue with your covariate and treatment.  Sometimes what seems like a good context for RD actually isn't on closer inspection.  Matias Cattaneo mentions this in [this seminar](https://www.chamberlainseminar.org/past-seminars/autumn-2020#h.41tsl12q6tcb). Sometimes an RD can't happen. It's best to recognize that and head back to the drawing board.  Another fatal problem is presistent evidence of manipulation or covariate imbalance.  If you've tried to resolve these issues in a way that is appropriate to your context, but you still have problems in either test, then it might be best to move on.  Remember that one reason that RD is so compelling is that it is similar to an experimental setting.  If your observations may be able to precisely control treatment or there are significant differences in your treatment and control group, then you really can't implement RD. 
+
+<img src="https://media.giphy.com/media/5G98t8QjqBLK8/giphy.gif#center" alt="neato">
+
+# References
+

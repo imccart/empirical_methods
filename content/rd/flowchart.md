@@ -29,7 +29,7 @@ graph TD;
     E --> |"Fuzzy"| F2(["You have IV"])
     F2 --> Leave
     subgraph two ["Step 1b: "]
-    E --> |"Strict"| F1(["Okay, but how many cutoffs?"])
+    E --> |"Sharp"| F1(["Okay, but how many cutoffs?"])
     F1 --> G1(["one/pooled"])
     F1 --> G2(["multiple"])
     F1 --> G3(["multiple RVs"])
