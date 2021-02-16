@@ -6,8 +6,16 @@ output:
     toc: TRUE
     toc_float: TRUE
     toc_depth: 3
-#bibliography: '../../BibTeX_Library.bib'
+bibliography: '../../references-ks.bib'
 math: true
 ---
 
-talk about how to work with multiple cutoffs in this analysis 
+If you're here, you're dealing with multiple cutoffs and are considering an approach where you do *not* pool your observations.  You then have the option to conduct a separate analysis at each cutoff, ultimately generating separate treatment effect estimates. This is similar to the single cutoff approach, just done multiple times.  However, a single running variables with multiple treatments can either be non-cumulative or cumulative.  In the non-cumulative case, observations face different cutoffs, but the treatment is the same across the cutoffs.  Conversely, in the cumulative case, the treatment differs at each cutoff.   @cattaneo2020stata outlines these differences and discusses empirical approaches to this sort of analysis. This paper summarizes the recent advances in the RD literature regarding multiple cutoffs and details Stata commands (that also exist in R) that simplify the implementation of this approach. 
+
+From here, you can move on to [Step 2](/rd/step2_overview), but note that when we discuss the implementation of an RD design, we will focus on the single/pooled approach for ease of discussion.  Because the approach with multiple cutoffs is similar, much of our discussion will be applicable to this context. However, for more detail on the specifics of implementing and interpreting an RD design with multiple cutoffs, there are numerous resources available.  [Matias Cattaneo](https://cattaneo.princeton.edu/home) and his numerous coauthors are at the helm of this branch of the literature.  Much of their work---such as @cattaneo2016politics---will be quite useful for researchers implementing this design.  Lastly, [this website](https://rdpackages.github.io/) outlines all of their R and Stata packages related to RD, including packages to work with multiple cutoffs.  For this, we are eternally grateful. 
+
+
+
+
+
+# References

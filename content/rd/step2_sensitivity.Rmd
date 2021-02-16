@@ -11,3 +11,5 @@ math: true
 ---
 
 talk about how to evaluate your approach
+
+Another approach that you may take in light of a manipulated running variable is to estimate bounds on the treatment effects [@gerard2018bounds].  Stata and R code for this process is detailed [here](https://github.com/francoisgerard/rdbounds/).  

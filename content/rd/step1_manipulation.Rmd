@@ -22,4 +22,5 @@ So what do we do? Well, there are tests that we can perform to analyze the conti
 
 Both commands will produce the numerical results of the test along with the corresponding density plots.  While these tests are similar, given the ease of use, it is worthwhile to implement both.  As researchers, our role is to use the tools at our disposal to better understand the relationships we are investigating.  That said, the more evidence that we can present to build confidence and lend transparency in our analyses, the better. 
 
+
 # References 

@@ -1,13 +1,17 @@
 ---
 title: "What about multiple running variables?"
-date: '2020-11-20'
+date: '2021-02-16'
 output: 
   blogdown::html_document2:
     toc: TRUE
     toc_float: TRUE
     toc_depth: 3
-#bibliography: '../../BibTeX_Library.bib'
+bibliography: '../../references-ks.bib'
 math: true
 ---
 
-cite the work on how to handle multiple RVs
+So far, our discussion of the RD design has focused on a single running variable and an exogenous assignment to treatment.  However, in many empirical settings, a treatment assignment may be based on multiple underlying scores.  @cattaneo2020stata points to research where school admission is based on both reading and math scores.  Another example is @keele2015geographic, which uses treatment assignment based on geographic location defined by latitude and longitude.  There is a relatively new area of literature that proposes methodologies for this sort of analysis which may provide helpful solutions for your context [@cattaneo2020stata; @papay2011extending; @reardon2012regression].  
+  
+  
+
+# References 

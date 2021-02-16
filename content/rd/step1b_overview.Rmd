@@ -19,7 +19,7 @@ If you're here, it means that you've assessed your running variable, you can say
 
 Whatever your case, you have options. Click on the link that best describes your context so that you can better understand how to construct your analysis. 
 
-1. [One/Pooled](/rd/step1b_one): You either have one cutoff, or multiple cutoffs that you can group together at treat as one. 
+1. [One/Pooled](/rd/step1b_one): You either have one cutoff or multiple cutoffs that you can group together at treat as one. 
 
 2. [Multiple](/rd/step1b_mult): In this case, you have multiple cutoffs and you want to keep them separate. 
 

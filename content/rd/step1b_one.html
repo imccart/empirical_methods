@@ -1,15 +1,31 @@
 ---
 title: "A single or pooled cutoff?"
-date: '2020-11-20'
+date: '2021-02-16'
 output: 
   blogdown::html_document2:
     toc: TRUE
     toc_float: TRUE
     toc_depth: 3
-#bibliography: '../../BibTeX_Library.bib'
+bibliography: '../../references-ks.bib'
 math: true
 ---
 
 
 
-<p>give an overview about the different number of cutoffs</p>
+<div id="single-cutoff" class="section level2">
+<h2>Single Cutoff</h2>
+<p>At its simplest, the RD design exploits an exogenously determined cutoff to assign observations to treatment based on an underlying metric. If this is true in your context—meaning that you have a single running variable and one cutoff that determines treatment—then you’re ready to move on to <a href="/rd/step2_overview">Step 2</a>.</p>
+</div>
+<div id="pooled-cutoff" class="section level2">
+<h2>Pooled Cutoff</h2>
+<p>If instead, your context has a single running variable with multiple cutoffs to determine treatment, you have a choice to make. Your first option is to pool the observations by normalizing the running variable for each observation by the relevant cutoff and then proceeding as if there was only one cutoff at <span class="math inline">\(c=0\)</span>. In this way, you now have a single cutoff and can again move on to estimation. However, this “normalizing-and-pooling” approach will have important implications for the interpretation of the coefficient on treatment that differ from the standard single-cutoff RD design <span class="citation">(Cattaneo et al. 2016)</span>. We’ll return to this discussion when we cover the RD <a href="/rd/step2_specification">specification</a>, but be cognizant that this is something you’ll need to consider in your discussion of the results.</p>
+<p>You may also choose not to pool your observations and instead analyze separately by cutoff. We discuss this option more <a href="/rd/step1b_mult">here</a>. As you conduct your analysis, you can try both pooled and separate analyses, but keep in mind how the interpretation of your result may differ as you vary your specification.</p>
+</div>
+<div id="references" class="section level1 unnumbered">
+<h1>References</h1>
+<div id="refs" class="references">
+<div id="ref-cattaneo2016politics">
+<p>Cattaneo, Matias D, Rocı́o Titiunik, Gonzalo Vazquez-Bare, and Luke Keele. 2016. “Interpreting Regression Discontinuity Designs with Multiple Cutoffs.” <em>The Journal of Politics</em> 78 (4): 1229–48.</p>
+</div>
+</div>
+</div>

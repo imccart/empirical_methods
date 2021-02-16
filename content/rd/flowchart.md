@@ -35,6 +35,7 @@ graph TD;
     F1 --> G3(["multiple RVs"])
     end
     G1 --> H(["Implement"])
+    G2 --> H
     subgraph three ["Step 2: Put it to work"]
     H --> I1(["Graph"])
     H --> I2(["Band/Bin Width"])
